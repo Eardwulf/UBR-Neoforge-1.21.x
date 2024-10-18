@@ -1,5 +1,7 @@
 package com.ubr.aldoria;
 
+import com.ubr.aldoria.block.ModBlocks;
+import com.ubr.aldoria.item.ModItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -47,6 +49,9 @@ public class AldoriaCoreMod
         NeoForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
