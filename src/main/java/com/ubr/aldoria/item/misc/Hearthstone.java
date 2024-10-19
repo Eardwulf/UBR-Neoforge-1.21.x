@@ -1,4 +1,4 @@
-package com.ubr.aldoria.items;
+package com.ubr.aldoria.item.misc;
 
 import com.ubr.aldoria.util.PlayerData;
 import com.ubr.aldoria.util.PlayerDataManager;

@@ -7,19 +7,19 @@
   ],
   "key": {
     "A": {
-      "item": "aldoriacm:aether_crystal"  // Replace with the correct mod ID and item name
+      "item": "aldoriacm:aether_crystal"
     },
     "T": {
-      "item": "aldoriacm:titanite_dust"    // Replace with the correct mod ID and item name
+      "item": "aldoriacm:titanite_dust"
     },
     "M": {
-      "item": "aldoriacm:moon_shard"       // Replace with the correct mod ID and item name
+      "item": "aldoriacm:moon_shard"
     },
     "C": {
-      "item": "aldoriacm:cryolite_shard"   // Replace with the correct mod ID and item name
+      "item": "aldoriacm:cryolite_shard"
     },
     "S": {
-      "item": "minecraft:stone"             // Standard Minecraft stone
+      "item": "minecraft:stone"            
     }
   },
   "result": {
