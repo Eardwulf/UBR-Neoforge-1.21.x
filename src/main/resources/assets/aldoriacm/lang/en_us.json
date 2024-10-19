@@ -1,0 +1,8 @@
+{
+  "item.aldoriacm.hearthstone": "Hearthstone",
+  "item.aldoriacm.hearthstone.teleport": "You have been teleported to your Home point.",
+  "item.aldoriacm.hearthstone.no_home": "You have not set a Home point.",
+  "item.aldoriacm.hearthstone.cooldown": "You must wait before using the Hearthstone again.",
+  "item.aldoriacm.home.set": "Your Home point has been set.",
+  "block.aldoriacm.orichalcum_ore": "Orichalcum Ore"
+}

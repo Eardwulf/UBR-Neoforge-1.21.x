@@ -1,11 +1,9 @@
-package com.ubr.aldoria.block;
+package com.ubr.aldoria.init;
 
-import com.ubr.aldoria.AldoriaCoreMod;
-import com.ubr.aldoria.item.ModItems;
+import com.ubr.aldoria.AldoriaCM;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -16,7 +14,7 @@ import java.util.function.Supplier;
 
 public class ModBlocks
 {
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(AldoriaCoreMod.MODID);
+    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(AldoriaCM.MODID);
 
     //Ores//
     public static final DeferredBlock<Block> ORICHALCUM_ORE = registerBlock("orichalcum_ore",

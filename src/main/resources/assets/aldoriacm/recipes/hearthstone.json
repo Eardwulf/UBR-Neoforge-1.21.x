@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    "TSM",
+    " C "
+  ],
+  "key": {
+    "A": {
+      "item": "aldoriacm:aether_crystal"  // Replace with the correct mod ID and item name
+    },
+    "T": {
+      "item": "aldoriacm:titanite_dust"    // Replace with the correct mod ID and item name
+    },
+    "M": {
+      "item": "aldoriacm:moon_shard"       // Replace with the correct mod ID and item name
+    },
+    "C": {
+      "item": "aldoriacm:cryolite_shard"   // Replace with the correct mod ID and item name
+    },
+    "S": {
+      "item": "minecraft:stone"             // Standard Minecraft stone
+    }
+  },
+  "result": {
+    "item": "aldoriacm:hearthstone",
+    "count": 1
+  }
+}

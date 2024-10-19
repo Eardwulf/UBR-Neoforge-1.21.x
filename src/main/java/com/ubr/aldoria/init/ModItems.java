@@ -1,17 +1,18 @@
-package com.ubr.aldoria.item;
+package com.ubr.aldoria.init;
 
-import com.ubr.aldoria.AldoriaCoreMod;
+import com.ubr.aldoria.AldoriaCM;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+
 public class ModItems
 {
-    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(AldoriaCoreMod.MODID);
+    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(AldoriaCM.MODID);
 
     public static final DeferredItem<Item> HEARTHSTONE = ITEMS.register("hearthstone",
-            () -> new Item(new Item.Properties()));
+            () -> new com.ubr.aldoria.items.Hearthstone(new Item.Properties().stacksTo(1)));
 
     public static void register(IEventBus eventBus)
     {
