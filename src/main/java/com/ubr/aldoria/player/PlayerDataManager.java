@@ -1,5 +1,7 @@
-package com.ubr.aldoria.util;
+package com.ubr.aldoria.player;
 
+import com.ubr.aldoria.init.ModRaces;
+import com.ubr.aldoria.races.RaceRegistry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -12,8 +14,19 @@ import java.util.UUID;
 public class PlayerDataManager {
     private static final Map<UUID, PlayerData> playerDataMap = new HashMap<>();
 
+    public static void setPlayerRace(ServerPlayer player, ModRaces newRace) {
+        PlayerData data = getPlayerData(player);
+        data.setRace(newRace);
+        // Send a message to the player about the race update
+        player.sendSystemMessage(Component.translatable("message.aldoriacm.race.set", newRace.getName()));
+    }
+
     public static PlayerData getPlayerData(ServerPlayer player) {
-        return playerDataMap.computeIfAbsent(player.getUUID(), uuid -> new PlayerData());
+        return playerDataMap.computeIfAbsent(player.getUUID(), uuid -> new PlayerData(RaceRegistry.getRace("Nomads")));
+    }
+
+    public static PlayerStats getPlayerStats(ServerPlayer player) {
+        return getPlayerData(player).getStats();
     }
 
     public static void setHomePoint(ServerPlayer player, double x, double y, double z) {

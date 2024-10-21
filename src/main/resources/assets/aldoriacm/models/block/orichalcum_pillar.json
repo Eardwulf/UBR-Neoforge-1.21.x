@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/pillar",
+  "textures": {
+    "side": "aldoriacm:textures/blocks/orichalcum_block",
+    "top": "aldoriacm:textures/blocks/orichalcum_block"
+  }
+}

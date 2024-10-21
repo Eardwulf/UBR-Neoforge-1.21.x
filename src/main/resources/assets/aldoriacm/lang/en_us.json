@@ -1,8 +1,17 @@
 {
+  "creativetab.tutorialmod.aldoria_items": "Aldoria Items",
+  "creativetab.tutorialmod.aldoria_blocks": "Aldoria Blocks",
+
   "item.aldoriacm.hearthstone": "Hearthstone",
   "item.aldoriacm.hearthstone.teleport": "You have been teleported to your Home point.",
   "item.aldoriacm.hearthstone.no_home": "You have not set a Home point.",
   "item.aldoriacm.hearthstone.cooldown": "You must wait before using the Hearthstone again.",
   "item.aldoriacm.home.set": "Your Home point has been set.",
+
+  "block.aldoriacm.orichalcum_block": "Orichalcum Block",
+  "block.aldoriacm.orichalcum_pillar": "Orichalcum Pillar",
+  "block.aldoriacm.orichalcum_brick": "Orichalcum Brick",
+  "block.aldoriacm.orichalcum_tiles": "Orichalcum Tiles",
+  "block.aldoriacm.orichalcum_ward": "Orichalcum Ward",
   "block.aldoriacm.orichalcum_ore": "Orichalcum Ore"
 }

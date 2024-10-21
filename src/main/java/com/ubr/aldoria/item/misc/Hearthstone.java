@@ -1,10 +1,9 @@
 package com.ubr.aldoria.item.misc;
 
-import com.ubr.aldoria.util.PlayerData;
-import com.ubr.aldoria.util.PlayerDataManager;
+import com.ubr.aldoria.player.PlayerData;
+import com.ubr.aldoria.player.PlayerDataManager;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;

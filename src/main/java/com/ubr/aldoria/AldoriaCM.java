@@ -1,13 +1,28 @@
 package com.ubr.aldoria;
 
+import com.mojang.brigadier.CommandDispatcher;
+import com.mojang.brigadier.arguments.StringArgumentType;
+import com.mojang.brigadier.suggestion.IntegerSuggestion;
+import com.mojang.brigadier.suggestion.SuggestionProvider;
 import com.ubr.aldoria.init.ModBlocks;
 import com.ubr.aldoria.init.ModItems;
-import com.ubr.aldoria.util.PlayerDataManager;
+import com.ubr.aldoria.init.ModRaces;
+import com.ubr.aldoria.player.PlayerDataManager;
+import com.ubr.aldoria.player.PlayerEventHandler;
+import com.ubr.aldoria.player.PlayerStats;
+import com.ubr.aldoria.races.RaceRegistry;
+import com.ubr.aldoria.util.CustomTextComponent;
+import com.ubr.aldoria.util.StatsCommand;
+import net.minecraft.client.Minecraft;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
+import net.minecraft.commands.SharedSuggestionProvider;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -23,6 +38,13 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import org.slf4j.LoggerFactory;
+
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.concurrent.CompletableFuture;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(AldoriaCM.MODID)
@@ -40,6 +62,8 @@ public class AldoriaCM
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        RaceRegistry.registerRaces();
+        NeoForge.EVENT_BUS.register(PlayerEventHandler.class);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
@@ -69,19 +93,73 @@ public class AldoriaCM
 
     }
 
-
+    @SubscribeEvent
+    public void onRegisterCommands(RegisterCommandsEvent event) {
+        CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
+        StatsCommand.register(dispatcher);  // Register the /stats command
+    }
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         event.getServer().getCommands().getDispatcher().register(
-                Commands.literal("sethome")
-                        .requires(source -> source.hasPermission(2))
-                        .executes(context -> {
-                            CommandSourceStack source = context.getSource();
-                            ServerPlayer player = source.getPlayerOrException();
-                            PlayerDataManager.setHomePoint(player, player.getX(), player.getY(), player.getZ());
-                            return 1; // Return success
-                        })
+                Commands.literal("aldoria")
+                        .then(Commands.literal("sethome")
+                                .requires(source -> source.hasPermission(2))
+                                .executes(context -> {
+                                    CommandSourceStack source = context.getSource();
+                                    ServerPlayer player = source.getPlayerOrException();
+                                    PlayerDataManager.setHomePoint(player, player.getX(), player.getY(), player.getZ());
+                                    source.sendSuccess(new CustomTextComponent("Home point set successfully.").build(), true);
+                                    return 1;
+                                }))
+                        .then(Commands.literal("setrace")
+                                .requires(source -> source.hasPermission(2))
+                                .then(Commands.argument("race", StringArgumentType.word())
+                                        .suggests((context, builder) -> {
+                                            return net.minecraft.commands.SharedSuggestionProvider.suggest(new ArrayList<>(RaceRegistry.getAvailableRaces()), builder);
+                                        })
+                                        .executes(context -> {
+                                            CommandSourceStack source = context.getSource();
+                                            ServerPlayer player = source.getPlayerOrException();
+                                            String raceName = StringArgumentType.getString(context, "race");
+                                            ModRaces race = RaceRegistry.getRace(raceName);
+                                            if (race == null) {
+                                                source.sendFailure(Component.literal("Invalid race specified."));
+                                                return 0;
+                                            }
+                                            PlayerDataManager.setPlayerRace(player, race);
+                                            source.sendSuccess(new CustomTextComponent("Your race has been set to " + raceName + ".").build(), true);
+                                            return 1;
+                                        }))
+                        )
+                        .then(Commands.literal("getraces")
+                                .executes(context -> {
+                                    CommandSourceStack source = context.getSource();
+                                    String races = String.join(", ", RaceRegistry.getAvailableRaces());
+                                    // Create a Supplier<Component> for sendSuccess
+                                    source.sendSuccess(() -> Component.literal("Available Races: " + races), false);
+                                    return 1;
+                                }))
+
+                        .then(Commands.literal("stats")
+                                .executes(context -> {
+                                    ServerPlayer player = context.getSource().getPlayerOrException();
+                                    PlayerStats stats = PlayerDataManager.getPlayerData(player).getStats();  // Access PlayerStats
+
+                                    String message = String.format("Level: %d, Experience: %d, Attributes: %s",
+                                            stats.getLevel(),
+                                            stats.getExperience(),
+                                            stats.getAttributes().toString());
+
+                                    // Use a Supplier<Component> by providing a lambda expression
+                                    context.getSource().sendSuccess(() -> Component.literal(message), true);
+
+                                    return 1;
+                                })
+                        )
         );
+
     }
+
+
 }
