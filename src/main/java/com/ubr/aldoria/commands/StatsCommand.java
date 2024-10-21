@@ -1,4 +1,4 @@
-package com.ubr.aldoria.util;  // Ensure this package matches your structure
+package com.ubr.aldoria.commands;  // Ensure this package matches your structure
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;

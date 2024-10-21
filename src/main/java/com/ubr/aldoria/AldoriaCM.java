@@ -2,8 +2,7 @@ package com.ubr.aldoria;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
-import com.mojang.brigadier.suggestion.IntegerSuggestion;
-import com.mojang.brigadier.suggestion.SuggestionProvider;
+import com.ubr.aldoria.commands.ChooseRaceCommand;
 import com.ubr.aldoria.init.ModBlocks;
 import com.ubr.aldoria.init.ModItems;
 import com.ubr.aldoria.init.ModRaces;
@@ -12,17 +11,14 @@ import com.ubr.aldoria.player.PlayerEventHandler;
 import com.ubr.aldoria.player.PlayerStats;
 import com.ubr.aldoria.races.RaceRegistry;
 import com.ubr.aldoria.util.CustomTextComponent;
-import com.ubr.aldoria.util.StatsCommand;
-import net.minecraft.client.Minecraft;
+import com.ubr.aldoria.commands.StatsCommand;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
-import net.minecraft.commands.SharedSuggestionProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
-import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -38,13 +34,8 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import org.slf4j.LoggerFactory;
 
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.concurrent.CompletableFuture;
-import java.util.function.Supplier;
-import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(AldoriaCM.MODID)
@@ -96,7 +87,8 @@ public class AldoriaCM
     @SubscribeEvent
     public void onRegisterCommands(RegisterCommandsEvent event) {
         CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
-        StatsCommand.register(dispatcher);  // Register the /stats command
+        StatsCommand.register(dispatcher); //Register the /stats command
+        ChooseRaceCommand.register(dispatcher);// Register the /chooseRace command
     }
 
     @SubscribeEvent

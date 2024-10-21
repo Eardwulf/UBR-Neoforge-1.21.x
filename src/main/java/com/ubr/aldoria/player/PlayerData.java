@@ -22,24 +22,23 @@ public class PlayerData {
     private int level;
     private int experience;
     private Map<String, Attribute> attributes;
-    private ModRaces races;
     private ModRaces race;
 
     // New PlayerStats instance
     private PlayerStats stats;  // This holds more detailed stats like levels, experience, and more
 
-    public PlayerData(ModRaces nomads) {
+    public PlayerData(ModRaces race) {
         this.homeX = 0;
         this.homeY = 0;
         this.homeZ = 0;
 
         this.level = 1;
         this.experience = 0;
-        this.races = (nomads != null) ? nomads : ModRaces.getDefaultRace();
+        this.race = (race != null) ? race : ModRaces.getDefaultRace();
         this.attributes = new HashMap<>();
         this.stats = new PlayerStats();  // Initialize PlayerStats
 
-        initializeAttributes(); // Now correctly placed after all required fields are initialized
+        initializeAttributes(); // Correctly placed after all required fields are initialized
     }
 
     // Getter for PlayerStats
@@ -47,6 +46,7 @@ public class PlayerData {
         return stats;
     }
 
+    // Set the player's race and reinitialize their attributes
     public void setRace(ModRaces newRace) {
         this.race = newRace;
         this.attributes.clear();  // Assuming that changing the race might affect attributes
@@ -54,13 +54,13 @@ public class PlayerData {
     }
 
     private void initializeAttributes() {
-        if (this.races == null || this.races.getAttributes() == null) {
+        if (this.race == null || this.race.getAttributes() == null) {
             System.out.println("Race or race attributes are null at initialization.");
             return;
         }
 
-        for (String attributeName : races.getAttributes().keySet()) {
-            int attributeValue = races.getAttributes().get(attributeName);
+        for (String attributeName : race.getAttributes().keySet()) {
+            int attributeValue = race.getAttributes().get(attributeName);
             attributes.put(attributeName, new Attribute(attributeName, attributeValue));
         }
 
@@ -164,11 +164,9 @@ public class PlayerData {
     public void applyMindEffect(ServerPlayer player, int mind) {
         // Custom logic for reducing ability cooldowns by 2% per Mind point
         double cooldownReduction = mind * 0.02;
-        // Apply this in your ability system (if applicable)
 
         // Increase potion duration or effectiveness
         if (mind >= 5) {
-            // Example: Enhance active potion effects by 1 level every 5 Mind points
             player.getActiveEffects().forEach(effect -> {
                 int newAmplifier = Math.min(effect.getAmplifier() + (mind / 5), 3);  // Max amplifier level is 3
                 player.addEffect(new MobEffectInstance(effect.getEffect(), effect.getDuration(), newAmplifier));
@@ -191,7 +189,6 @@ public class PlayerData {
 
         // Optional: Give better trades or discounts with NPCs
         if (presence >= 5) {
-            // Example: Add a custom discount effect based on Presence level
             player.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 6000, presence / 5));
         }
     }
@@ -201,12 +198,6 @@ public class PlayerData {
         // Custom logic for increasing detection radius for mobs and players
         double detectionRangeBonus = awareness * 1.0;  // 1 block increase per Awareness point
         // Implement detection logic in your custom mob/player detection system
-
-        // Optional: Danger sense (visual/audio cue)
-        if (awareness >= 5) {
-            // Example: Add a subtle visual/auditory effect if hostile mobs are nearby
-            // This would need to tie into a custom system.
-        }
     }
 
     private void levelUp() {
@@ -231,8 +222,8 @@ public class PlayerData {
         return attributes;
     }
 
-    public ModRaces getRaces() {
-        return races;
+    public ModRaces getRace() {
+        return race;
     }
 
     public int getLevel() {
@@ -251,7 +242,7 @@ public class PlayerData {
         tag.putDouble("HomeZ", homeZ);
         tag.putInt("Level", level);
         tag.putInt("Experience", experience);
-        tag.putString("ModRaces", races.getName());
+        tag.putString("ModRaces", race.getName());
 
         // Save attributes
         CompoundTag attributesTag = new CompoundTag();
@@ -274,7 +265,7 @@ public class PlayerData {
         homeZ = tag.getDouble("HomeZ");
         level = tag.getInt("Level");
         experience = tag.getInt("Experience");
-        races = RaceRegistry.getRace(tag.getString("ModRaces"));
+        race = RaceRegistry.getRace(tag.getString("ModRaces"));
 
         // Load attributes
         CompoundTag attributesTag = tag.getCompound("Attributes");

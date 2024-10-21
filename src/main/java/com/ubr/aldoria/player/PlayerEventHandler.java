@@ -27,6 +27,27 @@ public class PlayerEventHandler {
 
         // Optionally send a message to the player
         player.sendSystemMessage(Component.translatable("Welcome back, " + player.getName().getString() + "!"));
+        if (!playerDataTag.contains("Race")) {
+            // No race selected, prompt the player to choose a race
+            promptRaceSelection(player);
+        } else {
+            // Load the player's race from the data
+            playerData.loadFromNBT(playerDataTag);
+        }
+
+        // Optionally apply stat effects when the player logs in
+        playerData.applyStatEffects(player);
+    }
+
+    // Prompt the player to choose a race
+    private static void promptRaceSelection(ServerPlayer player) {
+        // Send a message to the player asking them to choose a race
+        player.sendSystemMessage(Component.literal("Welcome! Please choose your race using /chooseRace <race>. Available races are:"));
+
+        // List available races
+        RaceRegistry.getAvailableRaces().forEach(raceName -> {
+            player.sendSystemMessage(Component.literal("- " + raceName));
+        });
     }
 
     @SubscribeEvent
