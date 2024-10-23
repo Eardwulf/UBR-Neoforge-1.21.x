@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "lit=true": { "model": "aldoriacm:block/orichalcum_lamp_on" },
+    "lit=false": { "model": "aldoriacm:block/orichalcum_lamp_off" }
+  }
+}

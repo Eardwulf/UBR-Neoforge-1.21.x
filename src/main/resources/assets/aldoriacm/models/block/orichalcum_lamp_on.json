@@ -1,0 +1,6 @@
+{
+  "parent": "block/lamp",
+  "textures": {
+    "texture": "aldoriacm:block/orichalcum_lamp_on"
+  }
+}

@@ -1,4 +1,4 @@
-package com.ubr.aldoria.block;
+package com.ubr.aldoria.block.wards;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;

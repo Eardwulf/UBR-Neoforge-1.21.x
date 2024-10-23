@@ -13,5 +13,8 @@
   "block.aldoriacm.orichalcum_brick": "Orichalcum Brick",
   "block.aldoriacm.orichalcum_tiles": "Orichalcum Tiles",
   "block.aldoriacm.orichalcum_ward": "Orichalcum Ward",
-  "block.aldoriacm.orichalcum_ore": "Orichalcum Ore"
+  "block.aldoriacm.orichalcum_ore": "Orichalcum Ore",
+  "block.aldoriacm.orichalcum_lamp": "Orichalcum Lamp",
+  "item.aldoriacm.lunar_compass": "Lunar Compass",
+  "item.aldoriacm.moonlight_lantern": "Moonlight Lantern"
 }
