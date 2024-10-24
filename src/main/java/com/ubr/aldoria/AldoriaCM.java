@@ -51,6 +51,7 @@ public class AldoriaCM
         modEventBus.addListener(this::addCreative);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
+        ModBlockEntities.BLOCK_ENTITIES.register(modEventBus); // Register block entities
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         RaceRegistry.registerRaces();

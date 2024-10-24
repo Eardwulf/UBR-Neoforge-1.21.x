@@ -1,4 +1,4 @@
-package com.ubr.aldoria.block;
+package com.ubr.aldoria.Machines;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;

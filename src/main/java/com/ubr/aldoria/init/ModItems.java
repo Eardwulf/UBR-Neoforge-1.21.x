@@ -19,9 +19,18 @@ public class ModItems
     public static final DeferredItem<Item> MOONLIGHT_LANTERN = ITEMS.register("moonlight_lantern", () -> new MoonlightLantern(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> MOONSTONE_AMULET = ITEMS.register("moonstone_dust", () -> new MoonstoneAmulet(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> LUNAR_CHARM = ITEMS.register("moonstone_dust", () -> new LunarCharm(new Item.Properties().stacksTo(5)));
+    public static final DeferredItem<Item> SUNSTONE_AMULET = ITEMS.register("sunstone_amulet", () -> new SunstoneAmulet(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> SUN_STONE = ITEMS.register("sun_stone", () -> new SunStone(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> AETHERIAL_QUARTZ_AMULET = ITEMS.register("aetherial_quartz_amulet", () -> new SunstoneAmulet(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> ELECTRUM_LAMP = ITEMS.register("electrum_lamp", () -> new SunstoneAmulet(new Item.Properties().stacksTo(5)));
+    public static final DeferredItem<Item> ELECTRUM_WIRING = ITEMS.register("electrum_wiring", () -> new SunstoneAmulet(new Item.Properties().stacksTo(16)));
+
 
     //Ingots
     public static final DeferredItem<Item> ORICHALCUM_INGOT = ITEMS.register("orichalcum_ingot", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> SUNSTONE_INGOT = ITEMS.register("sunstone_ingot", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CRYOLITE_INGOT = ITEMS.register("cryolite_ingot", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> ELECTRUM_INGOT = ITEMS.register("electrum_ingot", () -> new Item(new Item.Properties()));
 
 
     //Orichalcum Tools
@@ -72,6 +81,54 @@ public class ModItems
     public static final DeferredItem<HoeItem> MOONSTONE_HOE = ITEMS.register("moonstone_hoe",
             () -> new HoeItem(ModTiers.MOONSTONE, new Item.Properties()
                     .attributes(HoeItem.createAttributes(ModTiers.MOONSTONE, 0F, -3.0f))));
+    //Sunstone Tools
+    public static final DeferredItem<SwordItem> SUNSTONE_SWORD = ITEMS.register("sunstone_sword",
+            () -> new SwordItem(ModTiers.SUNSTONE, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModTiers.SUNSTONE, 5, -2.4f))));
+    public static final DeferredItem<PickaxeItem> SUNSTONE_PICKAXE = ITEMS.register("sunstone_pickaxe",
+            () -> new PickaxeItem(ModTiers.SUNSTONE, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModTiers.SUNSTONE, 1.0F, -2.8f))));
+    public static final DeferredItem<ShovelItem> SUNSTONE_SHOVEL = ITEMS.register("sunstone_shovel",
+            () -> new ShovelItem(ModTiers.SUNSTONE, new Item.Properties()
+                    .attributes(ShovelItem.createAttributes(ModTiers.SUNSTONE, 1.5F, -3.0f))));
+    public static final DeferredItem<AxeItem> SUNSTONE_AXE = ITEMS.register("sunstone_axe",
+            () -> new AxeItem(ModTiers.SUNSTONE, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModTiers.SUNSTONE, 6.0F, -3.2f))));
+    public static final DeferredItem<HoeItem> SUNSTONE_HOE = ITEMS.register("sunstone_hoe",
+            () -> new HoeItem(ModTiers.SUNSTONE, new Item.Properties()
+                    .attributes(HoeItem.createAttributes(ModTiers.SUNSTONE, 0F, -3.0f))));
+    //Cryolite Tools
+    public static final DeferredItem<SwordItem> CRYOLITE_SWORD = ITEMS.register("cryolite_sword",
+            () -> new SwordItem(ModTiers.CRYOLITE, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModTiers.CRYOLITE, 5, -2.4f))));
+    public static final DeferredItem<PickaxeItem> CRYOLITE_PICKAXE = ITEMS.register("cryolite_pickaxe",
+            () -> new PickaxeItem(ModTiers.CRYOLITE, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModTiers.CRYOLITE, 1.0F, -2.8f))));
+    public static final DeferredItem<ShovelItem> CRYOLITE_SHOVEL = ITEMS.register("cryolite_shovel",
+            () -> new ShovelItem(ModTiers.CRYOLITE, new Item.Properties()
+                    .attributes(ShovelItem.createAttributes(ModTiers.CRYOLITE, 1.5F, -3.0f))));
+    public static final DeferredItem<AxeItem> CRYOLITE_AXE = ITEMS.register("cryolite_axe",
+            () -> new AxeItem(ModTiers.CRYOLITE, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModTiers.CRYOLITE, 6.0F, -3.2f))));
+    public static final DeferredItem<HoeItem> CRYOLITE_HOE = ITEMS.register("cryolite_hoe",
+            () -> new HoeItem(ModTiers.CRYOLITE, new Item.Properties()
+                    .attributes(HoeItem.createAttributes(ModTiers.CRYOLITE, 0F, -3.0f))));
+    //Electrum Tools
+    public static final DeferredItem<SwordItem> ELECTRUM_SWORD = ITEMS.register("cryolite_sword",
+            () -> new SwordItem(ModTiers.ELECTRUM, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModTiers.ELECTRUM, 5, -2.4f))));
+    public static final DeferredItem<PickaxeItem> ELECTRUM_PICKAXE = ITEMS.register("cryolite_pickaxe",
+            () -> new PickaxeItem(ModTiers.ELECTRUM, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModTiers.ELECTRUM, 1.0F, -2.8f))));
+    public static final DeferredItem<ShovelItem> ELECTRUM_SHOVEL = ITEMS.register("cryolite_shovel",
+            () -> new ShovelItem(ModTiers.ELECTRUM, new Item.Properties()
+                    .attributes(ShovelItem.createAttributes(ModTiers.ELECTRUM, 1.5F, -3.0f))));
+    public static final DeferredItem<AxeItem> ELECTRUM_AXE = ITEMS.register("cryolite_axe",
+            () -> new AxeItem(ModTiers.ELECTRUM, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModTiers.ELECTRUM, 6.0F, -3.2f))));
+    public static final DeferredItem<HoeItem> ELECTRUM_HOE = ITEMS.register("cryolite_hoe",
+            () -> new HoeItem(ModTiers.ELECTRUM, new Item.Properties()
+                    .attributes(HoeItem.createAttributes(ModTiers.ELECTRUM, 0F, -3.0f))));
 
     //Orichalcum Armor
     public static final DeferredItem<ArmorItem> ORICHALCUM_HELMET = ITEMS.register("orichalcum_helmet",
@@ -108,6 +165,24 @@ public class ModItems
             () -> new MoonstoneArmor(ModArmorMaterials.MOONSTONE_ARMOR_MATERIAL.value(), ArmorItem.Type.LEGGINGS.getSlot()));
     public static final DeferredItem<ArmorItem> MOONSTONE_BOOTS = ITEMS.register("moonstone_boots",
             () -> new MoonstoneArmor(ModArmorMaterials.MOONSTONE_ARMOR_MATERIAL.value(), ArmorItem.Type.BOOTS.getSlot()));
+    //Sunstone Armor
+    public static final DeferredItem<ArmorItem> SUNSTONE_HELMET = ITEMS.register("sunstone_helmet",
+            () -> new MoonstoneArmor(ModArmorMaterials.SUNSTONE_ARMOR_MATERIAL.value(), ArmorItem.Type.HELMET.getSlot()));
+    public static final DeferredItem<ArmorItem> SUNSTONE_CHESTPLATE = ITEMS.register("sunstone_chestplate",
+            () -> new MoonstoneArmor(ModArmorMaterials.SUNSTONE_ARMOR_MATERIAL.value(), ArmorItem.Type.CHESTPLATE.getSlot()));
+    public static final DeferredItem<ArmorItem> SUNSTONE_LEGGINGS = ITEMS.register("sunstone_leggings",
+            () -> new MoonstoneArmor(ModArmorMaterials.SUNSTONE_ARMOR_MATERIAL.value(), ArmorItem.Type.LEGGINGS.getSlot()));
+    public static final DeferredItem<ArmorItem> SUNSTONE_BOOTS = ITEMS.register("sunstone_boots",
+            () -> new MoonstoneArmor(ModArmorMaterials.SUNSTONE_ARMOR_MATERIAL.value(), ArmorItem.Type.BOOTS.getSlot()));
+    //Cryolite Armor
+    public static final DeferredItem<ArmorItem> CRYOLITE_HELMET = ITEMS.register("cryolite_helmet",
+            () -> new MoonstoneArmor(ModArmorMaterials.CRYOLITE_ARMOR_MATERIAL.value(), ArmorItem.Type.HELMET.getSlot()));
+    public static final DeferredItem<ArmorItem> CRYOLITE_CHESTPLATE = ITEMS.register("cryolite_chestplate",
+            () -> new MoonstoneArmor(ModArmorMaterials.CRYOLITE_ARMOR_MATERIAL.value(), ArmorItem.Type.CHESTPLATE.getSlot()));
+    public static final DeferredItem<ArmorItem> CRYOLITE_LEGGINGS = ITEMS.register("cryolite_leggings",
+            () -> new MoonstoneArmor(ModArmorMaterials.CRYOLITE_ARMOR_MATERIAL.value(), ArmorItem.Type.LEGGINGS.getSlot()));
+    public static final DeferredItem<ArmorItem> CRYOLITE_BOOTS = ITEMS.register("cryolite_boots",
+            () -> new MoonstoneArmor(ModArmorMaterials.CRYOLITE_ARMOR_MATERIAL.value(), ArmorItem.Type.BOOTS.getSlot()));
 
     //Misc
     public static final DeferredItem<Item> TITANITE_SHARD = ITEMS.register("titanite_shard", () -> new Item(new Item.Properties()));
@@ -115,7 +190,10 @@ public class ModItems
     public static final DeferredItem<Item> TITANITE_ROD = ITEMS.register("titanite_rod", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> TITANITE_CORE = ITEMS.register("titanite_core", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> MOONSTONE_DUST = ITEMS.register("moonstone_dust", () -> new Item(new Item.Properties()));
-    public static final DeferredItem<Item> MOON_SHARD = ITEMS.register("moonstone_dust", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> MOON_SHARD = ITEMS.register("moon_shard", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> AETHERIAL_CRYSTAL = ITEMS.register("aetherial_crystal", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CRYOLITE_SHARD = ITEMS.register("cryolite_shard", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> ELECTRUM_COIL = ITEMS.register("electrum_coil", () -> new Item(new Item.Properties()));
 
 
     public static void register(IEventBus eventBus)

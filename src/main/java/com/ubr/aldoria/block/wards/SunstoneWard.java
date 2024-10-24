@@ -1,18 +1,17 @@
 package com.ubr.aldoria.block.wards;
 
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.Level;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 
 import java.util.List;
 
-public class MoonstoneWard extends Block {
-    public MoonstoneWard(Properties strength) {
-        super(BlockBehaviour.Properties.of() // Adjust material if needed
+public class SunstoneWard extends Block {
+    public SunstoneWard(Properties strength) {
+        super(Properties.of() // Adjust material if needed
                 .strength(2.0F, 6.0F)
                 .lightLevel(state -> 15)); // Optional: make it emit light
     }

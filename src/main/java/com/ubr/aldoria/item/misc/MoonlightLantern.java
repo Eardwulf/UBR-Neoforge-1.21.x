@@ -10,7 +10,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.Blocks;
 
-import static com.ubr.aldoria.block.OrichalcumLamp.LIT;
+import static com.ubr.aldoria.Machines.OrichalcumLamp.LIT;
 
 public class MoonlightLantern extends Item {
     public MoonlightLantern(Properties properties) {

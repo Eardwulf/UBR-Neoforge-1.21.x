@@ -7,9 +7,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
 
-public class WardBlock extends Block {
+public class OrichalcumWard extends Block {
 
-        public WardBlock(Properties properties) {
+        public OrichalcumWard(Properties properties) {
         super(properties);
     }
 
