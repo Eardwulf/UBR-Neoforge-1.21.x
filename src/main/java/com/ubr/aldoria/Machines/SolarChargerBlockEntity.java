@@ -27,6 +27,14 @@ public class SolarChargerBlockEntity extends BlockEntity {
         }
     }
 
+    public void receiveEnergy(int amount) {
+        if (storedEnergy + amount <= maxEnergy) {
+            storedEnergy += amount; // Add the received energy
+        } else {
+            storedEnergy = maxEnergy; // Cap at max energy
+        }
+    }
+
     public int extractEnergy(int amount) {
         if (storedEnergy >= amount) {
             storedEnergy -= amount;

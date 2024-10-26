@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -46,8 +47,16 @@ public class ModBlocks
             () -> new ElectrumCapacitor((BlockBehaviour.Properties.of().mapColor(MapColor.METAL).sound(SoundType.METAL).strength(60.0F, 2000.0F))));
     public static final DeferredBlock<Block> ELECTRUM_CONDUCTOR = BLOCKS.register("mystic_projector",
             () -> new ElectrumConductor((BlockBehaviour.Properties.of().mapColor(MapColor.METAL).sound(SoundType.METAL).strength(60.0F, 2000.0F))));
-    public static final DeferredBlock<Block> ELECTRUM_FURNACE = BLOCKS.register("mystic_projector",
-            () -> new ElectrumFurnace((BlockBehaviour.Properties.of().mapColor(MapColor.METAL).sound(SoundType.METAL).strength(60.0F, 2000.0F))));
+    public static final DeferredHolder<Block, ElectrumFurnace> ELECTRUM_FURNACE = BLOCKS.register("electrum_furnace",
+            () -> new ElectrumFurnace(Block.Properties.of().mapColor(MapColor.STONE).strength(3.0F)));
+    public static final DeferredBlock<SemiTransparentBlock> SEMI_TRANSPARENT_BLOCK = BLOCKS.register("semi_transparent_block",
+            () -> new SemiTransparentBlock(Block.Properties.of().mapColor(MapColor.STONE).strength(3.0F)));
+    public static final DeferredBlock<ElectrumWiring> ELECTRUM_WIRING = BLOCKS.register("electrum_wiring", () -> new ElectrumWiring(new Item.Properties().stacksTo(64)));
+    public static final DeferredBlock<Block> ELECTRUM_LAMP = BLOCKS.register("electrum_lamp",
+            () -> new AetherialLamp((BlockBehaviour.Properties.of().mapColor(MapColor.METAL).sound(SoundType.METAL).strength(60.0F, 2000.0F))));
+
+
+
 
     // Blocks
     public static final DeferredBlock<Block> ORICHALCUM_BLOCK = BLOCKS.register("orichalcum_block",

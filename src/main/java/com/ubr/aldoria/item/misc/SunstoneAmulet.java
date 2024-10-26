@@ -1,63 +1,41 @@
-package com.ubr.aldoria.item.misc;
+package com.ubr.aldoria.item;
 
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.monster.Phantom;
-import net.minecraft.world.entity.monster.Skeleton;
-import net.minecraft.world.entity.monster.Zombie;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-
+import net.minecraft.core.BlockPos;
 
 public class SunstoneAmulet extends Item {
     public SunstoneAmulet(Properties properties) {
-        super(properties.stacksTo(1)); // Limit to 1 item per stack
+        super(properties);
     }
 
-    public ItemStack use(ItemStack stack, Level world, Player player) {
-        // Logic for activating the amulet can be implemented here if needed
-        return stack;
-    }
+    public void onWearTick(ItemStack stack, Level level, LivingEntity entity) {
+        if (entity instanceof Player player) {
+            // Check if it's daytime
+            if (level.isDay()) {
+                // Apply fire resistance effect
+                player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, 0, true, false));
 
-    public void inventoryTick(ItemStack stack, Level world, LivingEntity entity, int slotId, boolean isSelected) {
-        // Check if the entity is a player and it's nighttime
-        if (entity instanceof Player player && world.isNight()) {
-            // Logic to make undead mobs avoid the player
-            for (LivingEntity nearbyEntity : world.getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().inflate(10))) {
-                if (isUndead(nearbyEntity)) {
-                    // Logic to make undead mobs move away from the player
-                    moveAwayFromPlayer(nearbyEntity, player);
-                }
+                // Increase blast damage (this may depend on how your mod handles damage)
+                // You might want to create a custom method or apply this effect in a different way
+                applyBlastDamageBoost(player);
+            } else {
+                // Remove effects if it's not daytime
+                player.removeEffect(MobEffects.FIRE_RESISTANCE);
             }
         }
     }
 
-    private boolean isUndead(LivingEntity entity) {
-        // Check if the entity is an undead type
-        return entity instanceof Skeleton ||
-                entity instanceof Zombie ||
-                entity instanceof Phantom; // Add other undead types as needed
-    }
-
-    private void moveAwayFromPlayer(LivingEntity undead, Player player) {
-        if (undead instanceof Mob mob) { // Ensure the entity is a Mob
-            // Calculate direction away from the player
-            double deltaX = undead.getX() - player.getX();
-            double deltaZ = undead.getZ() - player.getZ();
-            double distance = Math.sqrt(deltaX * deltaX + deltaZ * deltaZ);
-
-            // Move away from the player
-            if (distance > 0) {
-                mob.getNavigation().moveTo(undead.getX() + (deltaX / distance) * 5, undead.getY(), undead.getZ() + (deltaZ / distance) * 5, 1.0D);
-            }
-        }
-    }
-
-    @Override
-    public void onCraftedBy(ItemStack stack, Level world, Player player) {
-        player.sendSystemMessage(Component.literal("You feel the protective aura of the Moonstone Amulet.")); // Optional feedback
+    private void applyBlastDamageBoost(Player player) {
+        // Logic to increase player's blast damage
+        // This might involve modifying attack damage or applying a custom effect
+        // For example, you could add an effect that modifies damage values:
+        player.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(player.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() + 2.0);
     }
 }

@@ -1,6 +1,7 @@
 package com.ubr.aldoria.init;
 
 import com.ubr.aldoria.AldoriaCM;
+import com.ubr.aldoria.item.SunstoneAmulet;
 import com.ubr.aldoria.item.armor.MoonstoneArmor;
 import com.ubr.aldoria.item.misc.*;
 import net.minecraft.world.item.*;
@@ -21,9 +22,7 @@ public class ModItems
     public static final DeferredItem<Item> LUNAR_CHARM = ITEMS.register("moonstone_dust", () -> new LunarCharm(new Item.Properties().stacksTo(5)));
     public static final DeferredItem<Item> SUNSTONE_AMULET = ITEMS.register("sunstone_amulet", () -> new SunstoneAmulet(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> SUN_STONE = ITEMS.register("sun_stone", () -> new SunStone(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> AETHERIAL_QUARTZ_AMULET = ITEMS.register("aetherial_quartz_amulet", () -> new SunstoneAmulet(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> ELECTRUM_LAMP = ITEMS.register("electrum_lamp", () -> new SunstoneAmulet(new Item.Properties().stacksTo(5)));
-    public static final DeferredItem<Item> ELECTRUM_WIRING = ITEMS.register("electrum_wiring", () -> new SunstoneAmulet(new Item.Properties().stacksTo(16)));
+    public static final DeferredItem<Item> AETHERIAL_QUARTZ_AMULET = ITEMS.register("aetherial_quartz_amulet", () -> new AtherialQuartzAmulet(new Item.Properties().stacksTo(1)));
 
 
     //Ingots
