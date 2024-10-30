@@ -1,9 +1,11 @@
 package com.ubr.aldoria.init;
 
 import com.ubr.aldoria.AldoriaCM;
+import com.ubr.aldoria.item.HerbalInfusion;
 import com.ubr.aldoria.item.SunstoneAmulet;
 import com.ubr.aldoria.item.armor.MoonstoneArmor;
 import com.ubr.aldoria.item.misc.*;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -48,6 +50,7 @@ public class ModItems
     public static final DeferredItem<HoeItem> ORICHALCUM_HOE = ITEMS.register("orichalcum_hoe",
             () -> new HoeItem(ModTiers.ORICHALCUM, new Item.Properties()
                     .attributes(HoeItem.createAttributes(ModTiers.ORICHALCUM, 0F, -3.0f))));
+
     //Titanite Tools
     public static final DeferredItem<SwordItem> TITANITE_SWORD = ITEMS.register("titanite_sword",
             () -> new SwordItem(ModTiers.TITANITE, new Item.Properties()
@@ -64,6 +67,7 @@ public class ModItems
     public static final DeferredItem<HoeItem> TITANITE_HOE = ITEMS.register("titanite_hoe",
             () -> new HoeItem(ModTiers.TITANITE, new Item.Properties()
                     .attributes(HoeItem.createAttributes(ModTiers.TITANITE, 0F, -3.0f))));
+
     //Moonstone Tools
     public static final DeferredItem<SwordItem> MOONSTONE_SWORD = ITEMS.register("moonstone_sword",
             () -> new SwordItem(ModTiers.MOONSTONE, new Item.Properties()
@@ -80,6 +84,7 @@ public class ModItems
     public static final DeferredItem<HoeItem> MOONSTONE_HOE = ITEMS.register("moonstone_hoe",
             () -> new HoeItem(ModTiers.MOONSTONE, new Item.Properties()
                     .attributes(HoeItem.createAttributes(ModTiers.MOONSTONE, 0F, -3.0f))));
+
     //Sunstone Tools
     public static final DeferredItem<SwordItem> SUNSTONE_SWORD = ITEMS.register("sunstone_sword",
             () -> new SwordItem(ModTiers.SUNSTONE, new Item.Properties()
@@ -96,6 +101,7 @@ public class ModItems
     public static final DeferredItem<HoeItem> SUNSTONE_HOE = ITEMS.register("sunstone_hoe",
             () -> new HoeItem(ModTiers.SUNSTONE, new Item.Properties()
                     .attributes(HoeItem.createAttributes(ModTiers.SUNSTONE, 0F, -3.0f))));
+
     //Cryolite Tools
     public static final DeferredItem<SwordItem> CRYOLITE_SWORD = ITEMS.register("cryolite_sword",
             () -> new SwordItem(ModTiers.CRYOLITE, new Item.Properties()
@@ -142,6 +148,7 @@ public class ModItems
     public static final DeferredItem<ArmorItem> ORICHALCUM_BOOTS = ITEMS.register("orichalcum_boots",
             () -> new ArmorItem(ModArmorMaterials.ORICHALCUM_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(19))));
+
     //Titanite Armor
     public static final DeferredItem<ArmorItem> TITANITE_HELMET = ITEMS.register("titanite_helmet",
             () -> new ArmorItem(ModArmorMaterials.TITANITE_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
@@ -155,6 +162,7 @@ public class ModItems
     public static final DeferredItem<ArmorItem> TITANITE_BOOTS = ITEMS.register("titanite_boots",
             () -> new ArmorItem(ModArmorMaterials.TITANITE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(19))));
+
     //Moonstone Armor
     public static final DeferredItem<ArmorItem> MOONSTONE_HELMET = ITEMS.register("moonstone_helmet",
             () -> new MoonstoneArmor(ModArmorMaterials.MOONSTONE_ARMOR_MATERIAL.value(), ArmorItem.Type.HELMET.getSlot()));
@@ -164,6 +172,7 @@ public class ModItems
             () -> new MoonstoneArmor(ModArmorMaterials.MOONSTONE_ARMOR_MATERIAL.value(), ArmorItem.Type.LEGGINGS.getSlot()));
     public static final DeferredItem<ArmorItem> MOONSTONE_BOOTS = ITEMS.register("moonstone_boots",
             () -> new MoonstoneArmor(ModArmorMaterials.MOONSTONE_ARMOR_MATERIAL.value(), ArmorItem.Type.BOOTS.getSlot()));
+
     //Sunstone Armor
     public static final DeferredItem<ArmorItem> SUNSTONE_HELMET = ITEMS.register("sunstone_helmet",
             () -> new MoonstoneArmor(ModArmorMaterials.SUNSTONE_ARMOR_MATERIAL.value(), ArmorItem.Type.HELMET.getSlot()));
@@ -173,6 +182,7 @@ public class ModItems
             () -> new MoonstoneArmor(ModArmorMaterials.SUNSTONE_ARMOR_MATERIAL.value(), ArmorItem.Type.LEGGINGS.getSlot()));
     public static final DeferredItem<ArmorItem> SUNSTONE_BOOTS = ITEMS.register("sunstone_boots",
             () -> new MoonstoneArmor(ModArmorMaterials.SUNSTONE_ARMOR_MATERIAL.value(), ArmorItem.Type.BOOTS.getSlot()));
+
     //Cryolite Armor
     public static final DeferredItem<ArmorItem> CRYOLITE_HELMET = ITEMS.register("cryolite_helmet",
             () -> new MoonstoneArmor(ModArmorMaterials.CRYOLITE_ARMOR_MATERIAL.value(), ArmorItem.Type.HELMET.getSlot()));
@@ -193,6 +203,86 @@ public class ModItems
     public static final DeferredItem<Item> AETHERIAL_CRYSTAL = ITEMS.register("aetherial_crystal", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> CRYOLITE_SHARD = ITEMS.register("cryolite_shard", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> ELECTRUM_COIL = ITEMS.register("electrum_coil", () -> new Item(new Item.Properties()));
+
+    // Items for crops
+    public static final DeferredItem<Item> STARFRUIT = ITEMS.register("starfruit",
+            () -> new Item(new Item.Properties().food(ModFoods.STARFRUIT)));
+    public static final DeferredItem<Item> STARFRUIT_SEEDS = ITEMS.register("starfruit_seeds",
+            () -> new BlockItem(ModBlocks.STARFRUIT_CROP.get(), new Item.Properties()));
+    public static final DeferredItem<Item> MYSTIC_BERRY_SEEDS = ITEMS.register("mystic_berry_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.MYSTIC_BERRY_CROP.get(), new Item.Properties()));
+    public static final DeferredItem<Item> MYSTIC_BERRY = ITEMS.register("mystic_berry",
+            () -> new Item(new Item.Properties().food(ModFoods.MYSTIC_BERRY)));
+    public static final DeferredItem<Item> PUMPKIN_PEPPER = ITEMS.register("pumpkin_pepper",
+            () -> new Item(new Item.Properties().food(ModFoods.PUMPKIN_PEPPER)));
+    public static final DeferredItem<Item> PUMPKIN_PEPPER_SEEDS = ITEMS.register("pumpkin_pepper_seeds",
+            () -> new BlockItem(ModBlocks.PUMPKIN_PEPPER_CROP.get(), new Item.Properties()));
+    public static final DeferredItem<Item> HONEYDEW_MELON = ITEMS.register("honeydew_melon",
+            () -> new Item(new Item.Properties().food(ModFoods.HONEYDEW_MELON)));
+    public static final DeferredItem<Item> HONEYDEW_MELON_SEEDS = ITEMS.register("honeydew_melon_seeds",
+            () -> new BlockItem(ModBlocks.HONEYDEW_MELON_CROP.get(), new Item.Properties()));
+    public static final DeferredItem<Item> RED_QUINOA = ITEMS.register("red_quinoa",
+            () -> new Item(new Item.Properties().food(ModFoods.RED_QUINOA)));
+    public static final DeferredItem<Item> RED_QUINOA_SEEDS = ITEMS.register("red_quinoa_seeds",
+            () -> new BlockItem(ModBlocks.RED_QUINOA_CROP.get(), new Item.Properties()));
+    public static final DeferredItem<Item> GOLDEN_CORN = ITEMS.register("golden_corn",
+            () -> new Item(new Item.Properties().food(ModFoods.GOLDEN_CORN)));
+    public static final DeferredItem<Item> GOLDEN_CORN_SEEDS = ITEMS.register("golden_corn_seeds",
+            () -> new BlockItem(ModBlocks.GOLDEN_CORN_CROP.get(), new Item.Properties()));
+    public static final DeferredItem<Item> SPICY_RADISH = ITEMS.register("spicy_radish",
+            () -> new Item(new Item.Properties().food(ModFoods.SPICY_RADISH)));
+    public static final DeferredItem<Item> SPICY_RADISH_SEEDS = ITEMS.register("spicy_radish_seeds",
+            () -> new BlockItem(ModBlocks.SPICY_RADISH_CROP.get(), new Item.Properties()));
+    public static final DeferredItem<Item> CABBAGE = ITEMS.register("cabbage",
+            () -> new Item(new Item.Properties().food(ModFoods.CABBAGE)));
+    public static final DeferredItem<Item> CABBAGE_SEEDS = ITEMS.register("cabbage_seeds",
+            () -> new BlockItem(ModBlocks.CABBAGE_CROP.get(), new Item.Properties()));
+    public static final DeferredItem<Item> SUNCHOKE = ITEMS.register("sunchokes",
+            () -> new Item(new Item.Properties().food(ModFoods.SUNCHOKE)));
+    public static final DeferredItem<Item> SUNCHOKE_SEEDS = ITEMS.register("sunchokes_seeds",
+            () -> new BlockItem(ModBlocks.SUNCHOKE_CROP.get(), new Item.Properties()));
+    public static final DeferredItem<Item> CHILI_BEANS = ITEMS.register("chili_beans",
+            () -> new Item(new Item.Properties().food(ModFoods.CHILI_BEANS)));
+    public static final DeferredItem<Item> CHILI_BEANS_SEEDS = ITEMS.register("chili_beans_seeds",
+            () -> new BlockItem(ModBlocks.CHILI_BEAN_CROP.get(), new Item.Properties()));
+    public static final DeferredItem<Item> MISO_PEAS = ITEMS.register("miso_peas",
+            () -> new Item(new Item.Properties().food(ModFoods.MISO_PEAS)));
+    public static final DeferredItem<Item> MISO_PEAS_SEEDS = ITEMS.register("miso_peas_seeds",
+            () -> new BlockItem(ModBlocks.MISO_PEA_CROP.get(), new Item.Properties()));
+    public static final DeferredItem<Item> BLACKBERRIES = ITEMS.register("blackberries",
+            () -> new Item(new Item.Properties().food(ModFoods.BLACKBERRIES)));
+    public static final DeferredItem<Item> BLACKBERRIES_SEEDS = ITEMS.register("blackberries_seeds",
+            () -> new BlockItem(ModBlocks.BLACKBERRY_CROP.get(), new Item.Properties()));
+
+    // Herbal Infusions
+    public static final DeferredItem<Item> CHAMOMILE_TEA = ITEMS.register("chamomile_tea",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.5f).build())));
+    public static final DeferredItem<Item> GINGER_TEA = ITEMS.register("ginger_tea",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> MINT_INFUSION = ITEMS.register("mint_infusion",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> LAVENDER_BREW = ITEMS.register("lavender_brew",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> ELDERFLOWER_CORDIAL = ITEMS.register("elderflower_cordial",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> ROSEMARY_TONIC = ITEMS.register("rosemary_tonic",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> THYME_INFUSION = ITEMS.register("thyme_infusion",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> HIBISCUS_COOLER = ITEMS.register("hibiscus_cooler",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> BASIL_BREW = ITEMS.register("basil_brew",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> SAGE_SERUM = ITEMS.register("sage_serum",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> CILANTRO_TINCTURE = ITEMS.register("cilantro_tincture",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> LEMON_BALM_INFUSION = ITEMS.register("lemon_balm_infusion",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> PARSLEY_POTION = ITEMS.register("parsley_potion",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> DANDELION_ELIXIR = ITEMS.register("dandelion_elixir",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
 
 
     public static void register(IEventBus eventBus)
