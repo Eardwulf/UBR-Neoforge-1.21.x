@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    " G ",
+    " W "
+  ],
+  "key": {
+    "C": {
+      "item": "aldoria:cilantro"
+    },
+    "G": {
+      "item": "minecraft:glass_bottle"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "aldoria:cilantro_tincture",
+    "count": 1
+  }
+}

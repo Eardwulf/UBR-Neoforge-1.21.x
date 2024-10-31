@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " R ",
+    " B ",
+    " W "
+  ],
+  "key": {
+    "R": {
+      "item": "aldoria:rosemary"
+    },
+    "B": {
+      "item": "minecraft:glass_bottle"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "aldoria:rosemary_tonic",
+    "count": 1
+  }
+}

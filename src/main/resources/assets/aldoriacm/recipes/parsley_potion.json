@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " P ",
+    " G ",
+    " W "
+  ],
+  "key": {
+    "P": {
+      "item": "aldoria:parsley"
+    },
+    "G": {
+      "item": "minecraft:glass_bottle"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "aldoria:parsley_potion",
+    "count": 1
+  }
+}

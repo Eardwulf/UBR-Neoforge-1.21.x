@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " D ",
+    " G ",
+    " W "
+  ],
+  "key": {
+    "D": {
+      "item": "minecraft:dandelion"
+    },
+    "G": {
+      "item": "minecraft:glass_bottle"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "aldoria:dandelion_elixir",
+    "count": 1
+  }
+}

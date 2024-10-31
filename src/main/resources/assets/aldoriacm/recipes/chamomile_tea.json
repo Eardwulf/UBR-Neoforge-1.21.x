@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " H ",
+    " B ",
+    " W "
+  ],
+  "key": {
+    "H": {
+      "item": "aldoria:chamomile"
+    },
+    "B": {
+      "item": "minecraft:glass_bottle"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "aldoria:chamomile_tea",
+    "count": 1
+  }
+}

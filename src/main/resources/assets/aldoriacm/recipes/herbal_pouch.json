@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " H ",
+    " L ",
+    " H "
+  ],
+  "key": {
+    "H": {
+      "item": "aldoria:chamomile"
+    },
+    "L": {
+      "item": "minecraft:leather"
+    }
+  },
+  "result": {
+    "item": "aldoria:herbal_pouch",
+    "count": 1
+  }
+}

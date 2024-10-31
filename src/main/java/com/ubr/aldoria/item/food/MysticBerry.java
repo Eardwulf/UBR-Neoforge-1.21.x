@@ -1,4 +1,4 @@
-package com.ubr.aldoria.item.nature;
+package com.ubr.aldoria.item.food;
 
 
 import com.ubr.aldoria.init.ModFoods;

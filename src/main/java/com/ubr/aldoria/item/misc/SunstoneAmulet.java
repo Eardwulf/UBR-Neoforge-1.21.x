@@ -1,4 +1,4 @@
-package com.ubr.aldoria.item;
+package com.ubr.aldoria.item.misc;
 
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;

@@ -1,10 +1,12 @@
 package com.ubr.aldoria.init;
 
 import com.ubr.aldoria.AldoriaCM;
-import com.ubr.aldoria.item.HerbalInfusion;
-import com.ubr.aldoria.item.SunstoneAmulet;
+import com.ubr.aldoria.item.food.HerbalInfusion;
 import com.ubr.aldoria.item.armor.MoonstoneArmor;
+import com.ubr.aldoria.item.food.Stews;
 import com.ubr.aldoria.item.misc.*;
+import com.ubr.aldoria.item.nature.Candles;
+import com.ubr.aldoria.item.pouches.PouchItem;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
@@ -204,7 +206,49 @@ public class ModItems
     public static final DeferredItem<Item> CRYOLITE_SHARD = ITEMS.register("cryolite_shard", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> ELECTRUM_COIL = ITEMS.register("electrum_coil", () -> new Item(new Item.Properties()));
 
-    // Items for crops
+    // Root Stews
+    public static final DeferredItem<Item> SUNCHOKE_STEW = ITEMS.register("sunchoke_stew",
+            () -> new Stews(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.8f).build())));
+    public static final DeferredItem<Item> MISO_PEA_STEW = ITEMS.register("miso_pea_stew",
+            () -> new Stews(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().nutrition(7).saturationModifier(0.7f).build())));
+    public static final DeferredItem<Item> SPICY_RADISH_STEW = ITEMS.register("spicy_radish_stew",
+            () -> new Stews(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.6f).build())));
+    public static final DeferredItem<Item> GOLDEN_CORN_CHOWDER = ITEMS.register("golden_corn_chowder",
+            () -> new Stews(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().nutrition(10).saturationModifier(0.9f).build())));
+    public static final DeferredItem<Item> CABBAGE_SOUP = ITEMS.register("cabbage_soup",
+            () -> new Stews(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.6f).build())));
+
+    // Herbal Infusions
+    public static final DeferredItem<Item> CHAMOMILE_TEA = ITEMS.register("chamomile_tea",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.5f).build())));
+    public static final DeferredItem<Item> GINGER_TEA = ITEMS.register("ginger_tea",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> MINT_INFUSION = ITEMS.register("mint_infusion",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> LAVENDER_BREW = ITEMS.register("lavender_brew",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> ELDERFLOWER_CORDIAL = ITEMS.register("elderflower_cordial",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> ROSEMARY_TONIC = ITEMS.register("rosemary_tonic",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> THYME_INFUSION = ITEMS.register("thyme_infusion",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> HIBISCUS_COOLER = ITEMS.register("hibiscus_cooler",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> BASIL_BREW = ITEMS.register("basil_brew",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> SAGE_SERUM = ITEMS.register("sage_serum",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> CILANTRO_TINCTURE = ITEMS.register("cilantro_tincture",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> LEMON_BALM_INFUSION = ITEMS.register("lemon_balm_infusion",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> PARSLEY_POTION = ITEMS.register("parsley_potion",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    public static final DeferredItem<Item> DANDELION_ELIXIR = ITEMS.register("dandelion_elixir",
+            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+
+    // Crop Items
     public static final DeferredItem<Item> STARFRUIT = ITEMS.register("starfruit",
             () -> new Item(new Item.Properties().food(ModFoods.STARFRUIT)));
     public static final DeferredItem<Item> STARFRUIT_SEEDS = ITEMS.register("starfruit_seeds",
@@ -254,35 +298,34 @@ public class ModItems
     public static final DeferredItem<Item> BLACKBERRIES_SEEDS = ITEMS.register("blackberries_seeds",
             () -> new BlockItem(ModBlocks.BLACKBERRY_CROP.get(), new Item.Properties()));
 
-    // Herbal Infusions
-    public static final DeferredItem<Item> CHAMOMILE_TEA = ITEMS.register("chamomile_tea",
-            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.5f).build())));
-    public static final DeferredItem<Item> GINGER_TEA = ITEMS.register("ginger_tea",
-            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
-    public static final DeferredItem<Item> MINT_INFUSION = ITEMS.register("mint_infusion",
-            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
-    public static final DeferredItem<Item> LAVENDER_BREW = ITEMS.register("lavender_brew",
-            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
-    public static final DeferredItem<Item> ELDERFLOWER_CORDIAL = ITEMS.register("elderflower_cordial",
-            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
-    public static final DeferredItem<Item> ROSEMARY_TONIC = ITEMS.register("rosemary_tonic",
-            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
-    public static final DeferredItem<Item> THYME_INFUSION = ITEMS.register("thyme_infusion",
-            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
-    public static final DeferredItem<Item> HIBISCUS_COOLER = ITEMS.register("hibiscus_cooler",
-            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
-    public static final DeferredItem<Item> BASIL_BREW = ITEMS.register("basil_brew",
-            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
-    public static final DeferredItem<Item> SAGE_SERUM = ITEMS.register("sage_serum",
-            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
-    public static final DeferredItem<Item> CILANTRO_TINCTURE = ITEMS.register("cilantro_tincture",
-            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
-    public static final DeferredItem<Item> LEMON_BALM_INFUSION = ITEMS.register("lemon_balm_infusion",
-            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
-    public static final DeferredItem<Item> PARSLEY_POTION = ITEMS.register("parsley_potion",
-            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
-    public static final DeferredItem<Item> DANDELION_ELIXIR = ITEMS.register("dandelion_elixir",
-            () -> new HerbalInfusion(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().saturationModifier(0.4f).build())));
+    // Herb Items
+    public static final DeferredItem<Item> CHAMOMILE = ITEMS.register("chamomile", () -> new Item(new Item.Properties().stacksTo(64)));
+    public static final DeferredItem<Item> BASIL = ITEMS.register("basil", () -> new Item(new Item.Properties().stacksTo(64)));
+    public static final DeferredItem<Item> SAGE = ITEMS.register("sage", () -> new Item(new Item.Properties().stacksTo(64)));
+    public static final DeferredItem<Item> CILANTRO = ITEMS.register("cilantro", () -> new Item(new Item.Properties().stacksTo(64)));
+    public static final DeferredItem<Item> LEMON_BALM = ITEMS.register("lemon_balm", () -> new Item(new Item.Properties().stacksTo(64)));
+    public static final DeferredItem<Item> PARSLEY = ITEMS.register("parsley", () -> new Item(new Item.Properties().stacksTo(64)));
+    public static final DeferredItem<Item> ELDERFLOWER = ITEMS.register("parsley", () -> new Item(new Item.Properties().stacksTo(64)));
+    public static final DeferredItem<Item> GINGER_ROOT = ITEMS.register("parsley", () -> new Item(new Item.Properties().stacksTo(64)));
+    public static final DeferredItem<Item> HIBISCUS = ITEMS.register("parsley", () -> new Item(new Item.Properties().stacksTo(64)));
+    public static final DeferredItem<Item> LAVENDER = ITEMS.register("parsley", () -> new Item(new Item.Properties().stacksTo(64)));
+    public static final DeferredItem<Item> MINT = ITEMS.register("parsley", () -> new Item(new Item.Properties().stacksTo(64)));
+    public static final DeferredItem<Item> ROSEMARY = ITEMS.register("parsley", () -> new Item(new Item.Properties().stacksTo(64)));
+    public static final DeferredItem<Item> THYME = ITEMS.register("parsley", () -> new Item(new Item.Properties().stacksTo(64)));
+
+    // Pouch Items
+    public static final DeferredItem<Item> HERBAL_POUCH = ITEMS.register("herbal_pouch", () -> new PouchItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> SEED_POUCH = ITEMS.register("seed_pouch", () -> new PouchItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> FLOWER_POUCH = ITEMS.register("flower_pouch", () -> new PouchItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> ROOT_POUCH = ITEMS.register("root_pouch", () -> new PouchItem(new Item.Properties().stacksTo(1)));
+
+    // Candles
+    public static final DeferredItem<Item> LAVENDER_CANDLE = ITEMS.register("lavender_candle",
+            () -> new Candles(new Item.Properties().stacksTo(16), Candles.NaturalCandleType.LAVENDER));
+    public static final DeferredItem<Item> EUCALYPTUS_CANDLE = ITEMS.register("eucalyptus_candle",
+            () -> new Candles(new Item.Properties().stacksTo(16), Candles.NaturalCandleType.EUCALYPTUS));
+    public static final DeferredItem<Item> ROSE_CANDLE = ITEMS.register("rose_candle",
+            () -> new Candles(new Item.Properties().stacksTo(16), Candles.NaturalCandleType.ROSE));
 
 
     public static void register(IEventBus eventBus)

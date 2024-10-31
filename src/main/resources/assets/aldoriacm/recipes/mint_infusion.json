@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " M ",
+    " B ",
+    " W "
+  ],
+  "key": {
+    "M": {
+      "item": "aldoria:mint_leaves"
+    },
+    "B": {
+      "item": "minecraft:glass_bottle"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "aldoria:mint_infusion",
+    "count": 1
+  }
+}

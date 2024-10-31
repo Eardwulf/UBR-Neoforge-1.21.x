@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " L ",
+    " G ",
+    " W "
+  ],
+  "key": {
+    "L": {
+      "item": "aldoria:lemon_balm"
+    },
+    "G": {
+      "item": "minecraft:glass_bottle"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "aldoria:lemon_balm_infusion",
+    "count": 1
+  }
+}

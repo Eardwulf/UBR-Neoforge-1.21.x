@@ -3,9 +3,7 @@ package com.ubr.aldoria.init;
 import com.ubr.aldoria.AldoriaCM;
 import com.ubr.aldoria.Machines.*;
 import com.ubr.aldoria.block.*;
-import com.ubr.aldoria.block.farming.MysticBerryCropBlock;
-import com.ubr.aldoria.block.farming.PumpkinPeppersCropBlock;
-import com.ubr.aldoria.block.farming.StarfruitCropBlock;
+import com.ubr.aldoria.block.farming.*;
 import com.ubr.aldoria.block.wards.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -60,7 +58,7 @@ public class ModBlocks
     public static final DeferredBlock<Block> STARFRUIT_CROP = BLOCKS.register("starfruit_crop",
             () -> new StarfruitCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
     public static final DeferredBlock<Block> MYSTIC_BERRY_CROP = BLOCKS.register("mystic_berry_crop.json",
-            MysticBerryCropBlock::new);
+            () -> new MysticBerryCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
     public static final DeferredBlock<Block> PUMPKIN_PEPPER_CROP  = BLOCKS.register("starfruit_crop",
             () -> new PumpkinPeppersCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
     public static final DeferredBlock<Block> HONEYDEW_MELON_CROP  = BLOCKS.register("starfruit_crop",
@@ -70,17 +68,17 @@ public class ModBlocks
     public static final DeferredBlock<Block> GOLDEN_CORN_CROP  = BLOCKS.register("starfruit_crop",
             () -> new GoldenCornCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
     public static final DeferredBlock<Block> SPICY_RADISH_CROP  = BLOCKS.register("starfruit_crop",
-            () -> new SpicyRadishCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+            () -> new SpicyRadishesCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
     public static final DeferredBlock<Block> CABBAGE_CROP  = BLOCKS.register("starfruit_crop",
             () -> new CabbageCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
     public static final DeferredBlock<Block> SUNCHOKE_CROP  = BLOCKS.register("starfruit_crop",
-            () -> new SunchokeCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+            () -> new SunchokesCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
     public static final DeferredBlock<Block> CHILI_BEAN_CROP  = BLOCKS.register("starfruit_crop",
-            () -> new ChiliBeanCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+            () -> new ChiliBeansCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
     public static final DeferredBlock<Block> MISO_PEA_CROP  = BLOCKS.register("starfruit_crop",
-            () -> new MisoPeaCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+            () -> new MisoPeasCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
     public static final DeferredBlock<Block> BLACKBERRY_CROP  = BLOCKS.register("starfruit_crop",
-            () -> new BlackberryCropBlock (BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+            () -> new BlackberriesCropBlock (BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
 
 
 

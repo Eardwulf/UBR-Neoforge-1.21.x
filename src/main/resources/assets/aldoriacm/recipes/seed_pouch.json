@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    " L ",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "tag": "forge:seeds"
+    },
+    "L": {
+      "item": "minecraft:leather"
+    }
+  },
+  "result": {
+    "item": "aldoria:seed_pouch",
+    "count": 1
+  }
+}

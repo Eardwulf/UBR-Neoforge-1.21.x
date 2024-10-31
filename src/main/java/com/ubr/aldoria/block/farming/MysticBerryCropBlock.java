@@ -1,30 +1,31 @@
 package com.ubr.aldoria.block.farming;
 
 import com.ubr.aldoria.init.ModItems;
-import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.Property;
-import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.storage.loot.LootContext;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 public class MysticBerryCropBlock extends CropBlock {
-    public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 7);
+    public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 7); // 8 growth stages
+    public static final Random RANDOM = new Random();
 
-    public MysticBerryCropBlock() {
-        super(Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak());
-        this.registerDefaultState(this.stateDefinition.any().setValue(this.getAgeProperty(), 0));
+    public MysticBerryCropBlock(Properties properties) {
+        super(properties);
+        this.registerDefaultState(this.stateDefinition.any().setValue(AGE, 0));
     }
 
     @Override
     protected Item getBaseSeedId() {
-        return ModItems.MYSTIC_BERRY_SEEDS.get();
+        return ModItems.MYSTIC_BERRY_SEEDS.get(); // Define seeds in ModItems
     }
 
     @Override
@@ -48,10 +49,16 @@ public class MysticBerryCropBlock extends CropBlock {
         return this.defaultBlockState().setValue(this.getAgeProperty(), age);
     }
 
-    public void randomTick(BlockState state, ServerLevel world, BlockPos pos, Random random) {
-        if (!world.isAreaLoaded(pos, 1)) return; // Avoid loading unloaded chunks
-        if (world.getRawBrightness(pos, 0) >= 9 && random.nextInt(5) == 0) { // Growth chance
-            this.growCrops(world, pos, state);
+    public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
+        int age = state.getValue(this.getAgeProperty());
+        if (age >= this.getMaxAge()) {
+            return List.of(new ItemStack(ModItems.MYSTIC_BERRY.get(), 1 + RANDOM.nextInt(2))); // Drop Starfruit
         }
+        return Collections.emptyList(); // No drop if not mature
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(AGE);
     }
 }

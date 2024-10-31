@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " R ",
+    " L ",
+    " R "
+  ],
+  "key": {
+    "R": {
+      "item": "aldoria:sunchokes"
+    },
+    "L": {
+      "item": "minecraft:leather"
+    }
+  },
+  "result": {
+    "item": "aldoria:root_pouch",
+    "count": 1
+  }
+}

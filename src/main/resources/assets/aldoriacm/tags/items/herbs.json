@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "aldoria:chamomile",
+    "aldoria:basil",
+    "aldoria:sage",
+    "aldoria:cilantro",
+    "aldoria:lemon_balm",
+    "aldoria:parsley"
+  ]
+}

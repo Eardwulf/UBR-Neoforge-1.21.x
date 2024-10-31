@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " T ",
+    " B ",
+    " W "
+  ],
+  "key": {
+    "T": {
+      "item": "aldoria:thyme"
+    },
+    "B": {
+      "item": "minecraft:glass_bottle"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "aldoria:thyme_infusion",
+    "count": 1
+  }
+}

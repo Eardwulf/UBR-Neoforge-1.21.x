@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " L ",
+    " B ",
+    " W "
+  ],
+  "key": {
+    "L": {
+      "item": "aldoria:lavender"
+    },
+    "B": {
+      "item": "minecraft:glass_bottle"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "aldoria:lavender_brew",
+    "count": 1
+  }
+}

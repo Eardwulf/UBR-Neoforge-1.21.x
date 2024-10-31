@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    " G ",
+    " W "
+  ],
+  "key": {
+    "S": {
+      "item": "aldoria:sage"
+    },
+    "G": {
+      "item": "minecraft:glass_bottle"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "aldoria:sage_serum",
+    "count": 1
+  }
+}

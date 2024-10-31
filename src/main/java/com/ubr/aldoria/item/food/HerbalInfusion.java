@@ -1,4 +1,4 @@
-package com.ubr.aldoria.item;
+package com.ubr.aldoria.item.food;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;

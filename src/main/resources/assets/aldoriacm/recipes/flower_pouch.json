@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " F ",
+    " L ",
+    " F "
+  ],
+  "key": {
+    "F": {
+      "tag": "forge:flowers"
+    },
+    "L": {
+      "item": "minecraft:leather"
+    }
+  },
+  "result": {
+    "item": "aldoria:flower_pouch",
+    "count": 1
+  }
+}

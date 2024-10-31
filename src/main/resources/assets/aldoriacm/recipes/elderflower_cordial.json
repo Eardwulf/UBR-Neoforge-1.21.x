@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " E ",
+    " B ",
+    " W "
+  ],
+  "key": {
+    "E": {
+      "item": "aldoria:elderflower"
+    },
+    "B": {
+      "item": "minecraft:glass_bottle"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "aldoria:elderflower_cordial",
+    "count": 1
+  }
+}
