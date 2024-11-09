@@ -1,5 +1,6 @@
 package com.ubr.aldoria.machines;
 
+import com.ubr.aldoria.blockEntities.ElectrumCapacitorBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;

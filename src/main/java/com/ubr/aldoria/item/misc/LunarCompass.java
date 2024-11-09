@@ -1,5 +1,6 @@
 package com.ubr.aldoria.item.misc;
 
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
@@ -8,9 +9,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component; // Import for Component
 
+import java.util.function.Supplier;
+
 
 public class LunarCompass extends Item {
-    public LunarCompass(Properties properties) {
+    public LunarCompass(Properties properties, Supplier<CreativeModeTab> aldoriaItems) {
         super(new Item.Properties()
                 .stacksTo(1) // Limit to 1 item per slot
                 .durability(100)); // Set durability, adjust as needed

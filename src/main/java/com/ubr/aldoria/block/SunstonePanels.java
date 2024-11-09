@@ -1,6 +1,6 @@
 package com.ubr.aldoria.block;
 
-import com.ubr.aldoria.machines.SolarChargerBlockEntity;
+import com.ubr.aldoria.blockEntities.SolarChargerBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;

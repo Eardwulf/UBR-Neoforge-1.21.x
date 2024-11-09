@@ -1,5 +1,6 @@
-package com.ubr.aldoria.block;
+package com.ubr.aldoria.container;
 
+import com.ubr.aldoria.blockEntities.MortarAndPestleBlockEntity;
 import com.ubr.aldoria.init.ModContainers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.Container;

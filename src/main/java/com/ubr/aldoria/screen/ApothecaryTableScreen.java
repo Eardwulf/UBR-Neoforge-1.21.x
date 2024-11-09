@@ -1,15 +1,11 @@
-package com.ubr.aldoria.machines;
+package com.ubr.aldoria.screen;
 
-import com.ubr.aldoria.AldoriaCM;
+import com.ubr.aldoria.container.ApothecaryTableContainer;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.inventory.CraftingMenu;
-import com.mojang.blaze3d.systems.RenderSystem;
 
 public class ApothecaryTableScreen extends AbstractContainerScreen<ApothecaryTableContainer> {
 

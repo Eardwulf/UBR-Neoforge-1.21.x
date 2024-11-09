@@ -1,4 +1,4 @@
-package com.ubr.aldoria.machines;
+package com.ubr.aldoria.blockEntities;
 
 import com.ubr.aldoria.init.ModBlockEntities;
 import net.minecraft.core.BlockPos;

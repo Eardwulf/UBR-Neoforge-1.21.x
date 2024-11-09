@@ -1,4 +1,4 @@
-package com.ubr.aldoria.block.farming.crops;
+package com.ubr.aldoria.block.farming;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;

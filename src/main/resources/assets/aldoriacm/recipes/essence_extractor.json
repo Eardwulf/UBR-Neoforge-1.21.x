@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "PSP",
+    " E "
+  ],
+  "key": {
+    "C": {
+      "item": "aldoria:crystallized_essence"
+    },
+    "P": {
+      "item": "aldoria:purified_stone"
+    },
+    "S": {
+      "item": "aldoria:ethereal_shard"
+    },
+    "E": {
+      "item": "aldoria:purified_stone"
+    }
+  },
+  "result": {
+    "item": "aldoria:essence_extractor",
+    "count": 1
+  }
+}

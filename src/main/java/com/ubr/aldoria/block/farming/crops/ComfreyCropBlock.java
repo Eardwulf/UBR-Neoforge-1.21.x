@@ -48,7 +48,6 @@ public class ComfreyCropBlock extends CropBlock {
         return this.defaultBlockState().setValue(this.getAgeProperty(), age);
     }
 
-    @Override
     public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
         int age = state.getValue(this.getAgeProperty());
         if (age >= this.getMaxAge()) {

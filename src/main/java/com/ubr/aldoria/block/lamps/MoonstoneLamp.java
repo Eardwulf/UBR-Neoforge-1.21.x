@@ -1,4 +1,4 @@
-package com.ubr.aldoria.blocks;
+package com.ubr.aldoria.block.lamps;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -9,7 +9,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.server.level.ServerLevel;
 
-import static com.ubr.aldoria.machines.OrichalcumLamp.LIT;
+import static com.ubr.aldoria.block.lamps.OrichalcumLamp.LIT;
 
 public class MoonstoneLamp extends LanternBlock {
     public MoonstoneLamp() {

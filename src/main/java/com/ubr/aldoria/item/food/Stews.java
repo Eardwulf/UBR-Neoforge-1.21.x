@@ -4,14 +4,13 @@ import com.ubr.aldoria.init.ModItems;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 
+import java.util.function.Supplier;
+
 public class Stews extends Item {
-    public Stews(Properties properties) {
+    public Stews(Properties properties, Supplier<CreativeModeTab> aldoriaFoods) {
         super(properties);
     }
 

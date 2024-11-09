@@ -1,5 +1,7 @@
 package com.ubr.aldoria.machines;
 
+import com.ubr.aldoria.blockEntities.ElectrumFurnaceBlockEntity;
+import com.ubr.aldoria.blockEntities.SolarChargerBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;

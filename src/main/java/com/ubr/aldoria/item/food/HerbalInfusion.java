@@ -2,6 +2,7 @@ package com.ubr.aldoria.item.food;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
@@ -9,8 +10,10 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import com.ubr.aldoria.init.ModItems;
 
+import java.util.function.Supplier;
+
 public class HerbalInfusion extends Item {
-    public HerbalInfusion(Properties properties) {
+    public HerbalInfusion(Properties properties, Supplier<CreativeModeTab> aldoriaApothecary) {
         super(properties);
     }
 

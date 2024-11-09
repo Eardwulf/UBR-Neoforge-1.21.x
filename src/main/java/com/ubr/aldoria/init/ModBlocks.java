@@ -1,6 +1,8 @@
 package com.ubr.aldoria.init;
 
 import com.ubr.aldoria.AldoriaCM;
+import com.ubr.aldoria.block.lamps.AetherialLamp;
+import com.ubr.aldoria.block.lamps.OrichalcumLamp;
 import com.ubr.aldoria.machines.*;
 import com.ubr.aldoria.machines.ElectrumCapacitor;
 import com.ubr.aldoria.block.*;
@@ -24,13 +26,13 @@ public class ModBlocks
 
     //Ores
     public static final DeferredBlock<Block> ORICHALCUM_ORE = registerBlock("orichalcum_ore",
-            () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().sound(SoundType.METAL).mapColor(MapColor.METAL).strength(10.0F, 10.0F)));
+            () -> new CustomBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().sound(SoundType.METAL).mapColor(MapColor.METAL).strength(10.0F, 10.0F), ModTabs.ALDORIA_BLOCKS));
     public static final DeferredBlock<Block> TITANITE_ORE = registerBlock("titanite_ore",
-            () -> new TitaniteOre(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().sound(SoundType.STONE).mapColor(MapColor.STONE).strength(10.0F, 10.0F)));
+            () -> new TitaniteOre(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().sound(SoundType.STONE).mapColor(MapColor.STONE).strength(10.0F, 10.0F), ModTabs.ALDORIA_BLOCKS));
     public static final DeferredBlock<Block> CRYOLITE_ORE = registerBlock("cryolite_ore",
-            () -> new TitaniteOre(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().sound(SoundType.STONE).mapColor(MapColor.STONE).strength(10.0F, 10.0F)));
+            () -> new CustomBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().sound(SoundType.STONE).mapColor(MapColor.STONE).strength(10.0F, 10.0F), ModTabs.ALDORIA_BLOCKS));
     public static final DeferredBlock<Block> ELECTRUM_ORE = registerBlock("electrum_ore",
-            () -> new TitaniteOre(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().sound(SoundType.STONE).mapColor(MapColor.STONE).strength(10.0F, 10.0F)));
+            () -> new CustomBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().sound(SoundType.STONE).mapColor(MapColor.STONE).strength(10.0F, 10.0F), ModTabs.ALDORIA_BLOCKS));
 
     //Machines
     public static final DeferredBlock<Block> ORICHALCUM_LAMP = BLOCKS.register("orichalcum_lamp",
@@ -165,32 +167,32 @@ public class ModBlocks
 
     // Blocks
     public static final DeferredBlock<Block> ORICHALCUM_BLOCK = BLOCKS.register("orichalcum_block",
-            () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).sound(SoundType.METAL).strength(60.0F, 2000.0F)));
+            () -> new CustomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).sound(SoundType.METAL).strength(60.0F, 2000.0F), ModTabs.ALDORIA_BLOCKS));
     public static final DeferredBlock<Block> ORICHALCUM_PILLAR = BLOCKS.register("orichalcum_pillar",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).sound(SoundType.METAL).strength(60.0F, 2000.0F)));
     public static final DeferredBlock<Block> ORICHALCUM_BRICK = BLOCKS.register("orichalcum_brick",
-            () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).sound(SoundType.METAL).strength(60.0F, 2000.0F)));
+            () -> new CustomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).sound(SoundType.METAL).strength(60.0F, 2000.0F), ModTabs.ALDORIA_BLOCKS));
     public static final DeferredBlock<Block> ORICHALCUM_TILES = BLOCKS.register("orichalcum_tiles",
-            () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).sound(SoundType.METAL).strength(60.0F, 2000.0F)));
+            () -> new CustomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).sound(SoundType.METAL).strength(60.0F, 2000.0F), ModTabs.ALDORIA_BLOCKS));
     public static final DeferredBlock<Block> TITANITE_BLOCK = BLOCKS.register("titanite_block",
-            () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.QUARTZ).sound(SoundType.AMETHYST).strength(60.0F, 2000.0F)));
+            () -> new CustomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.QUARTZ).sound(SoundType.AMETHYST).strength(60.0F, 2000.0F), ModTabs.ALDORIA_BLOCKS));
     public static final DeferredBlock<Block> MOONSTONE_BLOCK = BLOCKS.register("moonstone_block",
-            () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).sound(SoundType.STONE).strength(60.0F, 2000.0F)));
+            () -> new CustomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).sound(SoundType.STONE).strength(60.0F, 2000.0F), ModTabs.ALDORIA_BLOCKS));
     public static final DeferredBlock<Block> SUNSTONE_BLOCK = BLOCKS.register("sunstone_block",
-            () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).sound(SoundType.AMETHYST).strength(60.0F, 2000.0F)));
+            () -> new CustomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).sound(SoundType.AMETHYST).strength(60.0F, 2000.0F), ModTabs.ALDORIA_BLOCKS));
     public static final DeferredBlock<Block> SUNSTONE_BRICK = BLOCKS.register("sunstone_brick",
-            () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).sound(SoundType.AMETHYST).strength(60.0F, 2000.0F)));
+            () -> new CustomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).sound(SoundType.AMETHYST).strength(60.0F, 2000.0F), ModTabs.ALDORIA_BLOCKS));
     public static final DeferredBlock<Block> CRYOLITE_BRICK = BLOCKS.register("cryolite_brick",
-            () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).sound(SoundType.AMETHYST).strength(60.0F, 2000.0F)));
+            () -> new CustomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).sound(SoundType.AMETHYST).strength(60.0F, 2000.0F), ModTabs.ALDORIA_BLOCKS));
     public static final DeferredBlock<Block> CRYOLITE_BLOCK = BLOCKS.register("cryolite_block",
-            () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).sound(SoundType.AMETHYST).strength(60.0F, 2000.0F)));
+            () -> new CustomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).sound(SoundType.AMETHYST).strength(60.0F, 2000.0F), ModTabs.ALDORIA_BLOCKS));
 
 
     //Glass
     public static final DeferredBlock<Block> TITANITE_GLASS = BLOCKS.register("titanite_glass",
-            () -> new Block(BlockBehaviour.Properties.of().strength(0.3F).sound(SoundType.GLASS).noOcclusion()));
+            () -> new CustomBlock(BlockBehaviour.Properties.of().strength(0.3F).sound(SoundType.GLASS).noOcclusion(), ModTabs.ALDORIA_BLOCKS));
     public static final DeferredBlock<Block> CRYOLITE_GLASS = BLOCKS.register("cryolite_glass",
-            () -> new Block(BlockBehaviour.Properties.of().strength(0.3F).sound(SoundType.GLASS).noOcclusion()));
+            () -> new CustomBlock(BlockBehaviour.Properties.of().strength(0.3F).sound(SoundType.GLASS).noOcclusion(), ModTabs.ALDORIA_BLOCKS));
 
 
     //Wards
@@ -210,6 +212,12 @@ public class ModBlocks
             ApothecaryTableBlock::new);
     public  static final DeferredBlock<Block> MORTAL_AND_PESTLE_BLOCK = BLOCKS.register("apothecary_table_block",
             ApothecaryTableBlock::new);
+    public static final DeferredBlock<Block> ALCHEMY_FURNACE = BLOCKS.register("alchemy_furnace",
+            AlchemyFurnaceBlock::new);
+    public static final DeferredBlock<Block> DISTILLER = BLOCKS.register("distiller", DistillerBlock::new);
+    public static final DeferredBlock<Block> ESSENCE_COLLECTOR = BLOCKS.register("essence_collector",
+            EssenceCollectorBlock::new);
+
 
     //Util//
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

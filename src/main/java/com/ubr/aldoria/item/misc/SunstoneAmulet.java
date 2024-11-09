@@ -1,6 +1,7 @@
 package com.ubr.aldoria.item.misc;
 
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -8,10 +9,11 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.core.BlockPos;
+
+import java.util.function.Supplier;
 
 public class SunstoneAmulet extends Item {
-    public SunstoneAmulet(Properties properties) {
+    public SunstoneAmulet(Properties properties, Supplier<CreativeModeTab> aldoriaItems) {
         super(properties);
     }
 

@@ -4,6 +4,7 @@ import com.ubr.aldoria.player.PlayerData;
 import com.ubr.aldoria.player.PlayerDataManager;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -11,12 +12,14 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 
+import java.util.function.Supplier;
+
 public class Hearthstone extends Item {
 
     private static final int COOLDOWN_TIME = 20 * 60; // 1 hour in ticks (20 ticks = 1 second)
     private long lastTeleportTime;
 
-    public Hearthstone(Properties properties) {
+    public Hearthstone(Properties properties, Supplier<CreativeModeTab> aldoriaItems) {
         super(properties);
         this.lastTeleportTime = 0; // Set initial cooldown time
     }

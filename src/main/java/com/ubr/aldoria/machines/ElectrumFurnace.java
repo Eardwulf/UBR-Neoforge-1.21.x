@@ -1,5 +1,7 @@
 package com.ubr.aldoria.machines;
 
+import com.ubr.aldoria.blockEntities.ElectrumFurnaceBlockEntity;
+import com.ubr.aldoria.blockEntities.ElectrumWiringBlockEntity;
 import com.ubr.aldoria.init.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

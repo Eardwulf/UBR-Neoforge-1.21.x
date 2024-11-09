@@ -1,22 +1,23 @@
-package com.ubr.aldoria.block;
+package com.ubr.aldoria.block.lamps;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.Level;  // Import for Level
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.server.level.ServerLevel; // Import for ServerLevel
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import java.util.Random;
 
-public class AetherialLamp extends Block {
+public class OrichalcumLamp extends Block {
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
 
-    public AetherialLamp(Properties strength) {
-        super(Properties.of().lightLevel((state) -> state.getValue(LIT) ? 15 : 0));
+    public OrichalcumLamp(Properties strength) {
+        super(BlockBehaviour.Properties.of().lightLevel((state) -> state.getValue(LIT) ? 15 : 0));
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.ubr.aldoria.machines;
+package com.ubr.aldoria.container;
 
 import com.ubr.aldoria.init.ModContainers;
 import com.ubr.aldoria.util.CustomResultSlot;

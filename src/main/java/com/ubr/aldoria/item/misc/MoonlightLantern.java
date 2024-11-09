@@ -1,5 +1,6 @@
 package com.ubr.aldoria.item.misc;
 
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
@@ -10,10 +11,12 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.Blocks;
 
-import static com.ubr.aldoria.machines.OrichalcumLamp.LIT;
+import java.util.function.Supplier;
+
+import static com.ubr.aldoria.block.lamps.OrichalcumLamp.LIT;
 
 public class MoonlightLantern extends Item {
-    public MoonlightLantern(Properties properties) {
+    public MoonlightLantern(Properties properties, Supplier<CreativeModeTab> aldoriaItems) {
         super(properties.stacksTo(1).durability(100)); // Set properties
     }
 

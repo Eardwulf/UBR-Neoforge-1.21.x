@@ -2,9 +2,7 @@ package com.ubr.aldoria.init;
 
 
 import com.ubr.aldoria.AldoriaCM;
-import com.ubr.aldoria.block.MortarAndPestleBlockEntity;
-import com.ubr.aldoria.machines.*;
-import com.ubr.aldoria.machines.ElectrumCapacitorBlockEntity;
+import com.ubr.aldoria.blockEntities.*;
 import net.minecraft.core.Registry;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -45,5 +43,15 @@ public class ModBlockEntities {
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ElectrumConductorBlockEntity>> MORTAL_AND_PESTLE =
             BLOCK_ENTITIES.register("mortal_and_pestle",
                     () -> BlockEntityType.Builder.of(ElectrumConductorBlockEntity::new, ModBlocks.MORTAL_AND_PESTLE_BLOCK.get()).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AlchemyFurnaceBlockEntity>> ALCHEMY_FURNACE =
+            BLOCK_ENTITIES.register("alchemy_furnace", () -> BlockEntityType.Builder.of(AlchemyFurnaceBlockEntity::new, ModBlocks.ALCHEMY_FURNACE.get()).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<DistillerBlockEntity>> DISTILLER =
+            BLOCK_ENTITIES.register("distiller", () -> BlockEntityType.Builder.of(DistillerBlockEntity::new, ModBlocks.DISTILLER.get()).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<EssenceCollectorBlockEntity>> ESSENCE_COLLECTOR =
+            BLOCK_ENTITIES.register("essence_collector", () -> BlockEntityType.Builder.of(EssenceCollectorBlockEntity::new, ModBlocks.ESSENCE_COLLECTOR.get()).build(null));
+
 
 }

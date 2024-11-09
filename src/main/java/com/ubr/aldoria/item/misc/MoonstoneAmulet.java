@@ -1,8 +1,8 @@
 package com.ubr.aldoria.item.misc;
 
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -11,10 +11,11 @@ import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.monster.Phantom;
 import net.minecraft.network.chat.Component; // Import for Component
-import org.jetbrains.annotations.NotNull;
+
+import java.util.function.Supplier;
 
 public class MoonstoneAmulet extends Item {
-    public MoonstoneAmulet(Properties properties) {
+    public MoonstoneAmulet(Properties properties, Supplier<CreativeModeTab> aldoriaItems) {
         super(properties.stacksTo(1)); // Limit to 1 item per stack
     }
 

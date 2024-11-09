@@ -1,6 +1,7 @@
 package com.ubr.aldoria.block;
 
 import com.ubr.aldoria.init.ModItems;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -11,8 +12,10 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.material.MapColor;
 
+import java.util.function.Supplier;
+
 public class TitaniteOre extends Block {
-    public TitaniteOre(Properties strength) {
+    public TitaniteOre(Properties strength, Supplier<CreativeModeTab> aldoriaBlocks) {
         super(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F));
     }
 
