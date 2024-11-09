@@ -1,11 +1,9 @@
 package com.ubr.aldoria.block;
 
-import com.ubr.aldoria.Machines.SolarChargerBlockEntity;
+import com.ubr.aldoria.machines.SolarChargerBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
 
 public class SunstonePanels extends Block {

@@ -1,9 +1,10 @@
 package com.ubr.aldoria.init;
 
 import com.ubr.aldoria.AldoriaCM;
-import com.ubr.aldoria.Machines.*;
+import com.ubr.aldoria.machines.*;
+import com.ubr.aldoria.machines.ElectrumCapacitor;
 import com.ubr.aldoria.block.*;
-import com.ubr.aldoria.block.farming.*;
+import com.ubr.aldoria.block.farming.crops.*;
 import com.ubr.aldoria.block.wards.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -78,7 +79,87 @@ public class ModBlocks
     public static final DeferredBlock<Block> MISO_PEA_CROP  = BLOCKS.register("starfruit_crop",
             () -> new MisoPeasCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
     public static final DeferredBlock<Block> BLACKBERRY_CROP  = BLOCKS.register("starfruit_crop",
-            () -> new BlackberriesCropBlock (BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+            () -> new BlackberriesCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> DRAGONFRUIT_VINE_CROP = BLOCKS.register("dragonfruit_vine_crop",
+            () -> new DragonfruitVineBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> SILVER_MILLET_CROP = BLOCKS.register("silver_millet_crop",
+            () -> new SilverMilletCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> BLOOD_BERRY_CROP = BLOCKS.register("blood_berry_crop",
+            () -> new BloodBerryCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> FROST_BERRY_CROP = BLOCKS.register("frost_berry_crop",
+            () -> new FrostBerryCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> LUMINOUS_LEEK_CROP = BLOCKS.register("luminous_leek_crop",
+            () -> new LuminousLeekCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> MOON_TURNIP_CROP = BLOCKS.register("moon_turnip_crop",
+            () -> new MoonTurnipCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> GHOST_CHILI_PEPPER_CROP = BLOCKS.register("ghost_chili_pepper_crop",
+            () -> new GhostChiliPepperCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> TWILIGHT_GOURD_CROP = BLOCKS.register("twilight_gourd_crop",
+            () -> new TwilightGourdCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> DEWDROP_CUCUMBER_CROP = BLOCKS.register("dewdrop_cucumber_crop",
+            () -> new DewdropCucumberCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> GOLDEN_QUINOA_CROP = BLOCKS.register("golden_quinoa_crop",
+            () -> new GoldenQuinoaCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> AETHERIAL_RICE_CROP = BLOCKS.register("aethereal_rice_crop",
+            () -> new AetherialRiceCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> RAINBOW_BELL_PEPPER_CROP = BLOCKS.register("rainbow_bell_pepper_crop",
+            () -> new RainbowBellPepperCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> CRYSTAL_TOMATO_CROP = BLOCKS.register("crystal_tomato_crop",
+            () -> new CrystalTomatoCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> CHILLING_GARLIC_CROP = BLOCKS.register("chilling_garlic_crop",
+            () -> new ChillingGarlicCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> WHIMSICAL_ONION_CROP = BLOCKS.register("whimsical_onion_crop",
+            () -> new WhimsicalOnionCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> MYSTIC_TUBER_CROP = BLOCKS.register("mystic_tuber_crop",
+            () -> new MysticTuberCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> NIGHTSHADE_BERRY_CROP = BLOCKS.register("nightshade_berry_crop",
+            () -> new NightshadeBerryCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> BASILISK_ROOT_CROP = BLOCKS.register("basilisk_root_crop",
+            () -> new BasiliskRootCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> SILVERWEED_CROP = BLOCKS.register("silverweed_crop",
+            () -> new SilverweedCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> BASIL_CROP = BLOCKS.register("basil_crop",
+            () -> new BasilCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> CILANTRO_CROP = BLOCKS.register("cilantro_crop",
+            () -> new CilantroCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> LEMON_BALM_CROP = BLOCKS.register("lemon_balm_crop",
+            () -> new LemonBalmCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> PARSLEY_CROP = BLOCKS.register("parsley_crop",
+            () -> new ParsleyCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> GINGER_ROOT_CROP = BLOCKS.register("ginger_root_crop",
+            () -> new GingerRootCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> ALOE_VERA_CROP = BLOCKS.register("aloe_vera_crop",
+            () -> new AloeVeraCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> GINGER_CROP = BLOCKS.register("ginger_crop",
+            () -> new GingerCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> TURMERIC_CROP = BLOCKS.register("turmeric_crop",
+            () -> new TurmericCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> HOLY_BASIL_CROP = BLOCKS.register("holy_basil_crop",
+            () -> new HolyBasilCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> DANDELION_CROP = BLOCKS.register("dandelion_crop",
+            () -> new DandelionCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> VALERIAN_ROOT_CROP = BLOCKS.register("valerian_root_crop",
+            () -> new ValerianRootCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> GARLIC_CROP = BLOCKS.register("garlic_crop",
+            () -> new GarlicCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> NETTLE_CROP = BLOCKS.register("nettle_crop",
+            () -> new NettleCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> LICORICE_ROOT_CROP = BLOCKS.register("licorice_root_crop",
+            () -> new LicoriceRootCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> COMFREY_CROP = BLOCKS.register("comfrey_crop",
+            () -> new ComfreyCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> CATNIP_CROP = BLOCKS.register("catnip_crop",
+            () -> new CatnipCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> GINSENG_CROP = BLOCKS.register("ginseng_crop",
+            () -> new GinsengCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> YARROW_CROP = BLOCKS.register("yarrow_crop",
+            () -> new YarrowCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> ASHWAGANDHA_CROP = BLOCKS.register("ashwagandha_crop",
+            () -> new AshwagandhaCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> FEVERFEW_CROP = BLOCKS.register("feverfew_crop",
+            () -> new FeverfewCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
+    public static final DeferredBlock<Block> MILK_THISTLE_CROP = BLOCKS.register("milk_thistle_crop",
+            () -> new MilkThistleCropBlock(BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak()));
 
 
 
@@ -112,7 +193,6 @@ public class ModBlocks
             () -> new Block(BlockBehaviour.Properties.of().strength(0.3F).sound(SoundType.GLASS).noOcclusion()));
 
 
-
     //Wards
     public static final DeferredBlock<Block> ORICHALCUM_WARD = BLOCKS.register("orichalcum_ward",
             () -> new OrichalcumWard(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).sound(SoundType.METAL).strength(60.0F, 2000.0F)));
@@ -124,6 +204,12 @@ public class ModBlocks
             () -> new AetherialWard(BlockBehaviour.Properties.of().mapColor(MapColor.GLOW_LICHEN).sound(SoundType.POINTED_DRIPSTONE).strength(60.0F, 2000.0F)));
     public static final DeferredBlock<Block> CRYOLITE_WARD = BLOCKS.register("cryolite_ward",
             () -> new CryoliteWard(BlockBehaviour.Properties.of().mapColor(MapColor.ICE).sound(SoundType.SNOW).strength(60.0F, 2000.0F)));
+
+    //Apothecary
+    public  static final DeferredBlock<Block> APOTHECARY_TABLE_BLOCK = BLOCKS.register("apothecary_table_block",
+            ApothecaryTableBlock::new);
+    public  static final DeferredBlock<Block> MORTAL_AND_PESTLE_BLOCK = BLOCKS.register("apothecary_table_block",
+            ApothecaryTableBlock::new);
 
     //Util//
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

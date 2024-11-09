@@ -9,7 +9,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.server.level.ServerLevel;
 
-import static com.ubr.aldoria.Machines.OrichalcumLamp.LIT;
+import static com.ubr.aldoria.machines.OrichalcumLamp.LIT;
 
 public class MoonstoneLamp extends LanternBlock {
     public MoonstoneLamp() {

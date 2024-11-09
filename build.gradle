@@ -112,6 +112,10 @@ configurations {
 }
 
 dependencies {
+// Example: NeoForge dependency (replace <version> with your NeoForge version)
+    implementation "net.neoforged:NeoForge:<1.0.20>"
+    // Example: Minecraft dependency (replace with your required version)
+    implementation "net.minecraft:minecraft:<1.21.x>"
 
 }
 

@@ -25,7 +25,7 @@ public class ModTabs {
 
     public static final Supplier<CreativeModeTab> ALDORIA_BLOCKS = CREATIVE_MODE_TAB.register("aldoria_blocks_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.ORICHALCUM_BLOCK))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AldoriaCM.MODID, "aldoria_items_tab"))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AldoriaCM.MODID, "aldoria_blocks_tab"))
                     .title(Component.translatable("creativetab.tutorialmod.aldoria_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.ORICHALCUM_BLOCK);
@@ -34,6 +34,33 @@ public class ModTabs {
                         output.accept(ModBlocks.ORICHALCUM_TILES);
                         output.accept(ModBlocks.ORICHALCUM_WARD);
                         output.accept(ModBlocks.ORICHALCUM_ORE);
+
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> ALDORIA_POTIONS = CREATIVE_MODE_TAB.register("aldoria_potions_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.ORICHALCUM_BLOCK))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AldoriaCM.MODID, "aldoria_potions_tab"))
+                    .title(Component.translatable("creativetab.tutorialmod.aldoria_potions"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                       // output.accept(ModBlocks.ORICHALCUM_BLOCK);
+
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> ALDORIA_FOODS = CREATIVE_MODE_TAB.register("aldoria_foods_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.ORICHALCUM_BLOCK))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AldoriaCM.MODID, "aldoria_foods_tab"))
+                    .title(Component.translatable("creativetab.tutorialmod.aldoria_foods"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        // output.accept(ModBlocks.ORICHALCUM_BLOCK);
+
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> ALDORIA_SEEDS = CREATIVE_MODE_TAB.register("aldoria_seeds_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.ORICHALCUM_BLOCK))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AldoriaCM.MODID, "aldoria_seeds_tab"))
+                    .title(Component.translatable("creativetab.tutorialmod.aldoria_seeds"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        // output.accept(ModBlocks.ORICHALCUM_BLOCK);
 
                     }).build());
 
